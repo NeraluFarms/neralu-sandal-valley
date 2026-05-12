@@ -1,0 +1,2725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neralu Sandal Valley | Premium Managed Farmland</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        /* --- PREMIUM COLOR PALETTE --- */
+        :root {
+            --red-sandwood: #8B251E;
+            --gold: #D4AF37;
+            --dark-green: #1B4332;
+            --cream: #FBFBF9;
+            --white: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --text-muted: #555555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* --- THE LUXURY FLOATING GLASS HEADER --- */
+        header {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+            width: 90%;
+            max-width: 1300px;
+            background: var(--dark-green);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50px;
+            padding: 15px 40px;
+            z-index: 1000;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            max-height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 32px;
+            height: 2px;
+            background-color: var(--gold);
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* --- FULL SCREEN OVERLAY MENU --- */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--dark-green);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 30px;
+            right: 5%;
+            font-size: 2.5rem;
+            color: var(--gold);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            line-height: 1;
+        }
+
+        .close-menu:hover {
+            transform: scale(1.1);
+            color: var(--white);
+        }
+
+        .menu-links {
+            list-style: none;
+            text-align: center;
+        }
+
+        .menu-links li {
+            margin: 20px 0;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .menu-overlay.active .menu-links li {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .menu-links a {
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .menu-links a:hover {
+            color: var(--white);
+        }
+
+        .menu-subtitle {
+            color: var(--white);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            display: block;
+            text-align: center;
+        }
+
+        /* --- IMMERSIVE SPLIT HERO --- */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 75vh;
+            min-height: 580px;
+            margin-top: 0;
+        }
+
+        .hero-left {
+            position: relative;
+            background-color: var(--dark-green);
+            overflow: hidden;
+        }
+
+        .hero-video-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-right {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8% 12% 6%;
+            background: radial-gradient(circle at 30% 50%, rgba(139, 37, 30, 0.92) 0%, rgba(65, 12, 8, 1) 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0.15), transparent);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            color: var(--white);
+        }
+
+        /* UPDATED HIERARCHY: Project Name (h1) > Tagline (h2) > Paragraph (p) */
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 5px;
+            background: linear-gradient(to bottom, #F1D388 0%, #D4AF37 50%, #B58D24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+        }
+
+        .hero-content h2 {
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* --- HERO CTA BUTTON --- */
+        .btn-hero {
+            display: inline-block;
+            background-color: #D4AF37;
+            /* Gold */
+            color: #1B4332;
+            /* Dark Green */
+            padding: 16px 40px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+        }
+
+        .btn-hero:hover {
+            background-color: var(--white);
+            color: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- FLOATING SPECS BAR --- */
+        /* --- PROJECT SPECS SECTION --- */
+        /* --- PROJECT SPECS BAR --- */
+        #project-specs {
+            background: linear-gradient(135deg, #D4AF37 0%, #C5A028 100%);
+            padding: 30px 0;
+            border-top: 1px solid #D4AF37;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            z-index: 5;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Centered gold line divider */
+        #project-specs::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 2px;
+            background: var(--gold);
+            opacity: 0.6;
+            z-index: 6;
+        }
+
+        .specs-bar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        .specs-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+            justify-content: center;
+            background: #1B4332;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .specs-bar-item .icon-wrapper svg {
+            width: 24px;
+            height: 24px;
+            fill: #FFD700;
+        }
+
+        .specs-bar-item .text-wrapper {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.95rem;
+        }
+
+        .specs-data {
+            color: #FFD700 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: block;
+            /* Ensures it sits correctly above the label */
+            text-shadow: none;
+        }
+
+        .specs-label {
+            color: #FFFFFF;
+            opacity: 0.9;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .specs-bar-item .pills {
+            display: flex;
+            gap: 10px;
+        }
+
+        .specs-bar-item .pill {
+            background: #D9B382;
+            color: var(--dark-green);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1.5px solid var(--dark-green);
+        }
+
+        .specs-summary {
+            text-align: center;
+            max-width: 800px;
+            margin: 30px auto 0;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- CONCIERGE LEAD FORM --- */
+        .lead-section {
+            padding: 100px 0;
+            background-color: #FBFBF9;
+        }
+
+        .lead-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .lead-form {
+            background: var(--white);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .icon-input i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            font-size: 1rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            background: transparent;
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--dark-green);
+            box-shadow: 0 0 5px rgba(27, 67, 50, 0.2);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--red-sandwood);
+            color: var(--white);
+            padding: 20px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background 0.3s;
+            border-radius: 8px;
+        }
+
+        .btn-submit:hover {
+            background-color: #6a1a15;
+        }
+
+        @media (max-width: 900px) {
+            .lead-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .lead-form {
+                padding: 40px 20px;
+            }
+        }
+
+        .btn-submit:hover {
+            background-color: #6a1a15;
+        }
+
+        /* --- THE LEGACY STORY --- */
+        .legacy-section {
+            padding: 60px 0 100px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            color: var(--dark-green);
+            margin-bottom: 40px;
+        }
+
+        /* --- MASTERPLAN & AMENITIES --- */
+        #masterplan-amenities {
+            height: auto !important;
+            min-height: auto !important;
+            background: linear-gradient(135deg, #FDFBF7 0%, #F5F0E8 100%);
+            padding: 40px 0 !important;
+            margin-bottom: 80px !important;
+            position: relative;
+            display: block !important;
+            clear: both;
+            overflow: hidden;
+        }
+
+        .masterplan-grid {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .masterplan-column {
+            position: relative;
+            flex: 1;
+            z-index: 1;
+            line-height: 0;
+        }
+
+        .masterplan-column img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid #d4af37;
+            transition: transform 0.3s ease;
+        }
+
+        .masterplan-column:hover img {
+            transform: scale(1.02);
+        }
+
+        .amenities-column {
+            flex: 1;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .amenities-column h2 {
+            color: var(--dark-green);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .amenities-column ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .amenities-column ul li {
+            font-size: 0.85rem;
+            color: #1A1A1A;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .amenities-column ul li i {
+            color: var(--gold);
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .amenities-column ul li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .amenities-column ul li i {
+            color: #D4AF37;
+            font-size: 1.5rem;
+            width: 32px;
+            text-align: center;
+        }
+
+        /* =========================================
+   GALLERY SECTION
+========================================= */
+        .gallery-section {
+            padding: 30px 0 100px !important;
+            background-color: #FFFFFF;
+            position: relative;
+            margin-top: 0 !important;
+            overflow: visible !important;
+        }
+
+        .gallery-section .section-title {
+            margin-top: 0 !important;
+            margin-bottom: 20px !important;
+        }
+
+        .gallery-swiper {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 0 50px !important;
+            /* Extra padding bottom for pagination */
+            overflow: hidden;
+            /* Ensure navigation arrows don't cause horizontal scroll if they overflow */
+            position: relative !important;
+        }
+
+        .swiper-slide {
+            padding: 10px;
+            /* Space for shadow */
+        }
+
+        .slide-inner {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide-inner img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .swiper-slide:hover .slide-inner img {
+            transform: scale(1.05);
+        }
+
+        /* Navigation Arrows */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #F3924F !important;
+            background: #FFFFFF;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 20px !important;
+            font-weight: bold;
+        }
+
+        .swiper-button-prev {
+            left: 20px;
+        }
+
+        .swiper-button-next {
+            right: 20px;
+        }
+
+        /* Pagination Dots */
+        .swiper-pagination-bullet {
+            background: #F3924F !important;
+            width: 10px;
+            height: 10px;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            width: 24px;
+            border-radius: 5px;
+            background: #F3924F !important;
+        }
+
+        .gallery-nav-footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .gallery-nav-footer .swiper-button-next,
+        .gallery-nav-footer .swiper-button-prev {
+            position: static !important;
+            transform: none !important;
+            margin: 0 !important;
+        }
+
+        @media (max-width: 900px) {
+            .gallery-swiper {
+                padding: 20px 0 30px !important;
+            }
+
+            .gallery-nav-footer {
+                margin-top: 20px;
+                gap: 30px;
+            }
+        }
+
+        /* =========================================
+   PREMIUM LOCATION SECTION - COMPACT FIX
+========================================= */
+
+        .premium-location {
+            margin: 0 !important;
+            /* Physically push the section down 100px */
+            padding: 100px 0 80px !important;
+            background: #FDFBF7 !important;
+            position: relative;
+            display: block !important;
+            width: 100%;
+            height: auto !important;
+            clear: both !important;
+            overflow: hidden;
+            /* Prevents overlap from previous floated elements */
+        }
+
+        /* MOVE DECORATION LOWER */
+        .premium-location::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 40px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 120px;
+            height: 2px;
+
+            background:
+                linear-gradient(90deg,
+                    transparent,
+                    rgba(139, 37, 30, 0.35),
+                    transparent);
+        }
+
+        .premium-location::after {
+
+            content: "";
+
+            position: absolute;
+
+            bottom: -120px;
+            right: -120px;
+
+            width: 420px;
+            height: 420px;
+
+            background:
+                radial-gradient(rgba(27, 67, 50, 0.05),
+                    transparent 70%);
+
+            border-radius: 50%;
+        }
+
+        /* =========================================
+   CONTAINER
+========================================= */
+
+        .premium-location-container {
+
+            max-width: 1180px;
+
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: 1fr 0.95fr;
+
+            gap: 55px;
+
+            align-items: center;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =========================================
+   LEFT CONTENT
+========================================= */
+
+        .location-info {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+        }
+
+        /* TAG */
+        .location-tag {
+            display: inline-block;
+            background-color: #1B4332 !important;
+            color: #FFFFFF !important;
+            border: none !important;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 5px 15px;
+            border-radius: 50px;
+            margin-bottom: 20px !important;
+            box-shadow: 0 4px 10px rgba(27, 67, 50, 0.2);
+            position: relative;
+        }
+
+        /* TITLE */
+        .location-title {
+
+            font-size: 3.6rem;
+            line-height: 1.05;
+
+            color: #1B4332;
+
+            margin-bottom: 24px;
+
+            font-weight: 600;
+
+            letter-spacing: -1px;
+        }
+
+        /* DESCRIPTION */
+        .location-description {
+
+            font-size: 1rem;
+            line-height: 1.8;
+
+            color: #5F5F5F;
+
+            max-width: 560px;
+
+            margin-bottom: 38px;
+        }
+
+        /* =========================================
+   LOCATION POINTS
+========================================= */
+
+        .location-points {
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+        }
+
+        /* CARD */
+        .point-card {
+
+            background: rgba(255, 255, 255, 0.75);
+
+            border: 1px solid rgba(27, 67, 50, 0.08);
+
+            border-radius: 18px;
+
+            padding: 22px;
+
+            display: flex;
+            align-items: flex-start;
+
+            gap: 16px;
+
+            backdrop-filter: blur(10px);
+
+            transition: all 0.3s ease;
+        }
+
+        .point-card:hover {
+
+            transform: translateY(-4px);
+
+            border-color: rgba(139, 37, 30, 0.15);
+
+            box-shadow:
+                0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* ICON */
+        .point-icon {
+
+            min-width: 48px;
+            width: 48px;
+            height: 48px;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(135deg,
+                    #1B4332,
+                    #24543F);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow:
+                0 8px 18px rgba(27, 67, 50, 0.16);
+        }
+
+        .point-icon i {
+
+            color: #D4AF37;
+
+            font-size: 1rem;
+        }
+
+        /* TEXT */
+        .point-content h3 {
+
+            font-size: 1.05rem;
+            line-height: 1.5;
+
+            color: #1A1A1A;
+
+            margin-bottom: 5px;
+
+            font-weight: 700;
+        }
+
+        .point-content p {
+
+            color: #777;
+
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* =========================================
+   MAP
+========================================= */
+
+        .location-map-wrapper {
+            position: relative;
+            height: auto;
+            min-height: 450px;
+        }
+
+        /* MAP CARD */
+        .map-card {
+            background: #FBFBF9;
+            padding: 12px;
+            border-radius: 22px;
+
+            backdrop-filter: blur(14px);
+
+            border: 1px solid rgba(255, 255, 255, 0.45);
+
+            box-shadow:
+                0 20px 45px rgba(0, 0, 0, 0.07);
+        }
+
+        /* MAP */
+        .map-card iframe {
+            width: 100%;
+            height: 500px;
+            border: 0;
+            border-radius: 16px;
+            display: block;
+        }
+
+        /* =========================================
+   RESPONSIVE
+========================================= */
+
+        @media (max-width: 1000px) {
+
+            .premium-location {
+
+                padding: 70px 20px 60px;
+            }
+
+            .premium-location-container {
+
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+            .location-title {
+
+                font-size: 2.7rem;
+            }
+
+            .location-description {
+
+                font-size: 0.98rem;
+            }
+
+            .location-points {
+
+                grid-template-columns: 1fr;
+            }
+
+            .map-card iframe {
+
+                height: 360px;
+            }
+        }
+
+        /* =========================================
+   PREMIUM FAQ SECTION - FIXED
+========================================= */
+
+        .premium-faq {
+            /* Ensure a clear start after the location section */
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            padding: 80px 20px 40px !important;
+
+            background: linear-gradient(180deg, #F8F3ED 0%, #FBF8F3 100%);
+            border-top: none !important;
+            display: block !important;
+            width: 100%;
+            overflow: hidden;
+            clear: both !important;
+            position: relative !important;
+        }
+
+        /* CONTAINER */
+        .faq-container {
+
+            width: 100%;
+            max-width: 700px;
+
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+        .faq-header {
+
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* TITLE */
+        .faq-title {
+
+            font-size: 2rem;
+
+            line-height: 1.1;
+
+            color: #1B4332;
+
+            margin-bottom: 20px;
+
+            font-weight: 600;
+        }
+
+        /* SUBTITLE */
+        .faq-subtitle {
+
+            max-width: 680px;
+
+            margin: 0 auto;
+
+            font-size: 1rem;
+            line-height: 1.9;
+
+            color: #666;
+        }
+
+        /* FAQ LIST */
+        .faq-list {
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+        /* ITEM */
+        .faq-item {
+
+            background: rgba(255, 255, 255, 0.78);
+
+            border: 1px solid rgba(27, 67, 50, 0.08);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+
+            border-color: rgba(139, 37, 30, 0.15);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.04);
+        }
+
+        /* QUESTION */
+        .faq-question {
+
+            width: 100%;
+
+            background: transparent;
+            border: none;
+
+            padding: 15px 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+
+            cursor: pointer;
+
+            text-align: left;
+        }
+
+        /* TEXT */
+        .faq-question span {
+
+            flex: 1;
+
+            font-size: 1.05rem;
+            line-height: 1.7;
+
+            color: #1A1A1A;
+
+            font-weight: 600;
+        }
+
+        /* ICON */
+        .faq-question i {
+
+            color: var(--gold);
+
+            font-size: 1rem;
+
+            flex-shrink: 0;
+
+            transition: transform 0.3s ease;
+        }
+
+        /* ANSWER */
+        .faq-answer {
+
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition: max-height 0.4s ease;
+
+            padding: 0 28px;
+        }
+
+        /* ACTIVE */
+        .faq-item.active .faq-answer {
+
+            max-height: 500px;
+
+            padding-bottom: 24px;
+        }
+
+        .faq-item.active .faq-question i {
+
+            transform: rotate(45deg);
+        }
+
+        /* ANSWER TEXT */
+        .faq-answer p {
+
+            color: #666;
+
+            font-size: 0.98rem;
+            line-height: 1.9;
+        }
+
+        /* =========================================
+   MOBILE
+========================================= */
+
+        @media (max-width: 768px) {
+
+            .premium-faq {
+
+                padding: 80px 16px;
+            }
+
+            .faq-header {
+
+                margin-bottom: 45px;
+            }
+
+            .faq-title {
+
+                font-size: 2.5rem;
+            }
+
+            .faq-question {
+
+                padding: 22px 20px;
+            }
+
+            .faq-question span {
+
+                font-size: 1rem;
+            }
+
+            .faq-answer {
+
+                padding: 0 20px;
+            }
+
+            .faq-item.active .faq-answer {
+
+                padding-bottom: 22px;
+            }
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 80px 0 40px;
+            font-family: inherit;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+            text-align: left;
+        }
+
+        .footer-col h3.footer-title {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.8;
+            margin-top: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            opacity: 1;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            border-color: var(--gold);
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .footer-bottom a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        /* Floating Action Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+        }
+
+        .call-btn {
+            background-color: #D4AF37;
+            color: #1B4332 !important;
+            animation: pulse 2s infinite;
+        }
+
+        .call-btn:hover {
+            background-color: #C5A028;
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+            }
+        }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 900px) {
+            header {
+                width: 95%;
+                top: 15px;
+                padding: 15px 25px;
+            }
+
+            .logo img {
+                max-height: 38px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                height: auto;
+                min-height: auto;
+            }
+
+            .hero-left {
+                height: 450px;
+            }
+
+            .hero-right {
+                padding: 60px 25px;
+                text-align: center;
+            }
+
+            /* Responsive Hierarchy */
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero-tags {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            #project-specs {
+                padding: 40px 0;
+            }
+
+            .specs-bar {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .specs-bar-item {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .specs-bar-item .text-wrapper {
+                align-items: center;
+            }
+
+            .specs-summary {
+                font-size: 1rem;
+                padding: 0 5%;
+                margin-top: 25px;
+            }
+
+            #masterplan-amenities {
+                height: auto !important;
+                min-height: 600px;
+                background-color: #F9EAD3;
+                /* Use padding-bottom to create space inside this section */
+                padding-bottom: 80px !important;
+                /* Ensure no elements are floating that might overlap */
+                clear: both;
+                position: relative;
+                display: block;
+            }
+
+            .masterplan-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .masterplan-column {
+                height: 300px;
+            }
+
+            .amenities-column {
+                padding: 40px 25px;
+            }
+
+            .amenities-column ul {
+                grid-template-columns: 1fr !important;
+            }
+
+            .amenities-column ul li {
+                font-size: 0.8rem !important;
+                padding: 5px 10px !important;
+            }
+
+            .lead-grid {
+                padding: 40px 25px;
+            }
+
+            .legacy-row:nth-child(even) .legacy-image {
+                order: 0;
+            }
+
+            .close-menu {
+                top: 20px;
+                right: 25px;
+                font-size: 2rem;
+            }
+        }
+
+        /* --- SURGICAL MOBILE FIXES (768px) --- */
+        @media (max-width: 768px) {
+            .masterplan-grid {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .masterplan-column,
+            .amenities-column {
+                width: 100%;
+                flex: none;
+            }
+
+            .masterplan-column img {
+                width: 100vw;
+                max-width: 100vw;
+                position: relative;
+                left: 50%;
+                right: 50%;
+                margin-left: -50vw;
+                margin-right: -50vw;
+                border-radius: 0;
+            }
+
+            .amenities-column ul {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-buttons {
+                gap: 20px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .float-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: clamp(1.5rem, 5vw, 2.5rem);
+            }
+
+            .amenities-column h2 {
+                font-size: clamp(1.5rem, 5vw, 2.5rem);
+            }
+
+            .container {
+                padding: 0 20px !important;
+                max-width: 100% !important;
+            }
+
+            .lead-form {
+                width: 100%;
+                padding: 30px 20px;
+                box-shadow: none;
+            }
+
+            .hero-right {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+
+            .btn-hero {
+                width: 80% !important;
+            }
+
+            #project-specs {
+                padding: 30px 0 !important;
+            }
+
+            .specs-bar {
+                gap: 20px !important;
+            }
+
+            * {
+                max-width: 100vw !important;
+            }
+        }
+
+        /* --- TESTIMONIALS SECTION --- */
+        #testimonials {
+            background: radial-gradient(circle, #ffffff, #f3efe0);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .testimonial-swiper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+        }
+
+        .testimonial-card {
+            background: transparent;
+            padding: 20px;
+            min-height: 450px;
+        }
+
+        .banner-box {
+            position: relative;
+            height: 250px;
+            border-radius: 15px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 60px;
+            overflow: visible !important;
+            background-color: transparent !important;
+            filter: none !important;
+        }
+
+        .profile-circle {
+            position: absolute;
+            bottom: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+
+        .review-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #333;
+            margin: 60px 0 20px 0 !important;
+            font-style: italic;
+        }
+
+        .review-text::before {
+            content: '“';
+            font-size: 3rem;
+            color: #D4AF37;
+            vertical-align: middle;
+            margin-right: 10px;
+            font-family: serif;
+        }
+
+        .review-text::after {
+            content: '”';
+            font-size: 3rem;
+            color: #D4AF37;
+            vertical-align: middle;
+            margin-left: 10px;
+            font-family: serif;
+        }
+
+        .attribution {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .attribution strong {
+            color: #1B4332;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .control-bar {
+            background: #000000;
+            border-radius: 50px;
+            padding: 0 4px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            width: 160px !important;
+            height: 55px !important;
+            margin: 30px auto 0;
+            position: relative;
+            z-index: 100;
+            overflow: hidden !important;
+            gap: 0 !important;
+        }
+
+        .control-bar .swiper-button-prev,
+        .control-bar .swiper-button-next {
+            position: static !important;
+            top: auto !important;
+            transform: none !important;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            color: #1B4332;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin: 0 !important;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .control-bar .swiper-button-prev i,
+        .control-bar .swiper-button-next i {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .control-bar .swiper-button-prev::after,
+        .control-bar .swiper-button-next::after {
+            content: none !important;
+        }
+
+        .testimonial-swiper .swiper-pagination {
+            position: static !important;
+            width: auto !important;
+            display: flex !important;
+            justify-content: center !important;
+            padding: 0 !important;
+            align-items: center !important;
+            height: 100% !important;
+        }
+
+        /* All Dots (Inactive) */
+        .testimonial-swiper .swiper-pagination-bullet {
+            width: 6px !important;
+            height: 6px !important;
+            background: rgba(255, 255, 255, 0.3) !important;
+            border-radius: 50% !important;
+            margin: 0 2px !important;
+            transition: background 0.3s ease;
+            display: inline-block;
+            opacity: 1 !important;
+        }
+
+        /* The Active Dot (Current Slide) */
+        .testimonial-swiper .swiper-pagination-bullet-active {
+            width: 6px !important;
+            background: #D4AF37 !important;
+            opacity: 1 !important;
+        }
+
+        /* --- BRAND IDENTITY UNIFICATION --- */
+        #enquire,
+        #gallery,
+        #faq {
+            background: #FDFBF7 !important;
+        }
+
+        #gallery {
+            padding-bottom: 100px !important;
+        }
+
+        #masterplan-amenities {
+            background: #1B4332 !important;
+            color: #FFFFFF !important;
+        }
+
+        #masterplan-amenities h2 {
+            color: #FFFFFF !important;
+        }
+
+        #masterplan-amenities .amenities-column ul li {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            color: #FFFFFF !important;
+        }
+
+        #testimonials {
+            background: #F9F0EE !important;
+        }
+
+        /* --- 360° VIRTUAL TOUR --- */
+        #virtual-tour {
+            background-color: #1B4332 !important;
+            padding: 80px 0 !important;
+        }
+
+        #virtual-tour h2 {
+            color: #FFFFFF !important;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+
+        .tour-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .tour-container iframe {
+            width: 100%;
+            height: 500px;
+            border: 2px solid #D4AF37 !important;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            display: block;
+            background-color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .tour-container iframe {
+                height: 350px;
+            }
+
+            #virtual-tour h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-inner">
+            <div class="logo">
+                <img src="../image/NERALU-LOGO.png" alt="Neralu Farms">
+            </div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="close-menu" onclick="toggleMenu()">✕</div>
+
+        <div class="menu-inner">
+            <span class="menu-subtitle">Explore Our Portfolio</span>
+            <ul class="menu-links">
+                <li><a href="#">Neralu Korlaparthi</a></li>
+                <li><a href="#">Neralu Sandal Valley</a></li>
+                <li><a href="#">Neralu Brahmasamudra</a></li>
+                <li><a href="#">Neralu River Stone</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="hero">
+
+        <div class="hero-left">
+            <video autoplay muted loop playsinline class="hero-video-left">
+                <source src="../image/Sandal_Valley_Intro.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="hero-right">
+            <div class="hero-content">
+                <h1 class="serif">Neralu<br>Sandal Valley</h1>
+                <h2 class="serif">Where Timber Grows Wealth.</h2>
+                <p>Own premium managed farmland with high-yield Red Sandalwood trees and luxury resort amenities.</p>
+                <a href="#enquire" class="btn-hero">Download Brochure</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-specs">
+        <div class="container">
+            <div class="specs-bar">
+                <div class="specs-bar-item">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                    </div>
+                    <div class="text-wrapper">
+                        <strong class="specs-data">Gudibanda, Chikkaballapura</strong>
+                        <span class="specs-label">Location</span>
+                    </div>
+                </div>
+                <div class="specs-bar-item">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.05-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z" />
+                        </svg>
+                    </div>
+                    <div class="text-wrapper">
+                        <strong class="specs-data">Starting from ₹40 Lakhs*</strong>
+                        <span class="specs-label">Price</span>
+                    </div>
+                </div>
+                <div class="specs-bar-item">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z" />
+                        </svg>
+                    </div>
+                    <div class="text-wrapper">
+                        <div class="pills" style="margin-bottom: 5px;">
+                            <span class="pill">6000 Sq.Ft.</span>
+                            <span class="pill">10000 Sq.Ft.</span>
+                        </div>
+                        <label class="specs-label">Farm Plot Sizes</label>
+                    </div>
+                </div>
+            </div>
+
+            <p class="specs-summary">
+                Neralu Sandal Valley offers a zero-maintenance investment in premium managed Red Sandalwood farmland.
+                Experience raw, honest land designed for long-term legacy and wealth creation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Centered Lead Form (Moved here) -->
+    <section class="lead-section" id="enquire">
+        <div class="container">
+            <div class="lead-grid">
+                <!-- Left Column: Context/List -->
+                <div class="lead-info">
+                    <h3 class="serif" style="color: var(--dark-green); font-size: 2.5rem; margin-bottom: 20px;">Why
+                        Invest in Sandal Valley?</h3>
+                    <p style="font-size: 1.1rem; color: #555; margin-bottom: 30px;">Secure your future with a
+                        high-appreciating green asset.</p>
+                    <ul class="why-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 25px; display: flex; gap: 15px; align-items: center;">
+                            <div class="list-icon" style="color: var(--gold); font-size: 1.5rem;"><i
+                                    class="fa-solid fa-map-location-dot"></i></div>
+                            <div>
+                                <strong style="display: block; color: var(--dark-green); font-size: 1.1rem;">Highway
+                                    Access & Beautiful Views</strong>
+                                <span style="font-size: 0.95rem; color: #666;">Located right on the State Highway with
+                                    amazing views of the valley and lake. Easy to reach, hard to leave.</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 25px; display: flex; gap: 15px; align-items: center;">
+                            <div class="list-icon" style="color: var(--gold); font-size: 1.5rem;"><i
+                                    class="fa-solid fa-hand-holding-dollar"></i></div>
+                            <div>
+                                <strong style="display: block; color: var(--dark-green); font-size: 1.1rem;">Hands-Free
+                                    Farming & Profits</strong>
+                                <span style="font-size: 0.95rem; color: #666;">Own a plot where we do all the work.
+                                    Enjoy fresh fruits and honey while your land value and timber grow over time.</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 25px; display: flex; gap: 15px; align-items: center;">
+                            <div class="list-icon" style="color: var(--gold); font-size: 1.5rem;"><i
+                                    class="fa-solid fa-house-lock"></i></div>
+                            <div>
+                                <strong style="display: block; color: var(--dark-green); font-size: 1.1rem;">Luxury
+                                    Living & Resort Life</strong>
+                                <span style="font-size: 0.95rem; color: #666;">A safe, gated community with a clubhouse,
+                                    pool, and cottages already built. Close to famous tourist spots and growing
+                                    industries.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div class="lead-form">
+                    <h3
+                        style="color: var(--dark-green); font-weight: 700; text-align: center; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; font-size: 1.8rem;">
+                        Request Project Details</h3>
+                    <p style="text-align: center; color: #666; font-size: 0.95rem; margin-bottom: 30px;">Enter your
+                        details to receive the comprehensive project report and pricing.</p>
+                    <form id="lead-form" action="../submit-form.php" method="POST">
+                        <div class="form-group icon-input">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group icon-input">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}"
+                                maxlength="10">
+                        </div>
+                        <div class="form-group icon-input">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" name="email" placeholder="Email Address">
+                        </div>
+                        <input type="text" name="website" style="display:none !important" tabindex="-1"
+                            autocomplete="off">
+                        <input type="hidden" name="form_type" value="Neralu Sandal Valley">
+                        <div class="form-group"
+                            style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px;">
+                            <input type="checkbox" id="auth_check" name="auth_check" required
+                                style="width: auto; margin-top: 3px;">
+                            <label for="auth_check"
+                                style="font-size: 0.85rem; color: #444444; line-height: 1.4; cursor: pointer;">I
+                                authorize Neralu Farms & its representatives to contact me with updates and
+                                notifications via Email / SMS / WhatsApp / Call. This will override DND/NDNC.</label>
+                        </div>
+                        <button type="submit" class="btn-submit">Download Brochure</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="masterplan-amenities">
+        <div class="masterplan-grid">
+
+            <!-- Left Column: Masterplan -->
+            <div class="masterplan-column">
+                <a href="../image/valley_plan.webp" class="glightbox" style="display: block; width: 100%; height: 100%;"
+                    data-glightbox="title: Masterplan; description: View the detailed plot layout of Neralu Sandal Valley;">
+                    <img src="../image/valley_plan.webp" alt="Masterplan Layout" id="masterplan-img">
+                </a>
+
+                <!-- Zoom Button (Minimal) -->
+                <div
+                    style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.8); color: #1B4332; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none;">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <!-- Right Column: Amenities -->
+            <div class="amenities-column">
+                <h2 class="serif">World-Class Amenities</h2>
+                <ul>
+                    <li><i class="fa-solid fa-house-chimney-window"></i> Clubhouse</li>
+                    <li><i class="fa-solid fa-bed"></i> Luxury Cottages</li>
+                    <li><i class="fa-solid fa-person-swimming"></i> Swimming Pool</li>
+                    <li><i class="fa-solid fa-child-reaching"></i> Kids Play Area</li>
+                    <li><i class="fa-solid fa-mountain-sun"></i> ROCK GARDEN</li>
+                    <li><i class="fa-solid fa-utensils"></i> Dining Area</li>
+                    <li><i class="fa-solid fa-fish"></i> Fishing Pond</li>
+                    <li><i class="fa-solid fa-gamepad"></i> 20+ Indoor Games</li>
+                    <li><i class="fa-solid fa-shield-halved"></i> Gated Security</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================
+         GALLERY SECTION
+    ========================================= -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="serif section-title"
+                style="color: #1B4332; text-align: center; font-size: 3rem; margin-bottom: 20px;">Gallery</h2>
+        </div>
+        <!-- Swiper -->
+        <div class="swiper gallery-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-inner">
+                        <img src="./image/sandal10.webp" alt="Valley 1">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-inner">
+                        <img src="./image/sandal9.webp" alt="Valley 2">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-inner">
+                        <img src="./image/sandal8.webp" alt="Valley 3">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-inner">
+                        <img src="./image/sandal1.webp" alt="Valley 4">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-inner">
+                        <img src="./image/sandal6.webp" alt="Valley 5">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-inner">
+                        <img src="./image/sandal5.webp" alt="Valley 6">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-inner">
+                        <img src="./image/sandal7.webp" alt="Valley 7">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-inner">
+                        <img src="./image/sandal4.webp" alt="Valley 8">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-inner">
+                        <img src="./image/sandal2.webp" alt="Valley 9">
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Gallery Navigation Footer -->
+        <div class="gallery-nav-footer">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         360° VIRTUAL TOUR SECTION
+    ========================================= -->
+    <section id="virtual-tour">
+        <div class="container">
+            <h2 class="serif">Experience Sandal Valley in 360°</h2>
+            <div class="tour-container">
+                <iframe src="https://neralufarms.com/virtual-tour/" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+     PREMIUM LOCATION SECTION
+========================================= -->
+
+    <section class="premium-location">
+
+        <div class="premium-location-container">
+
+            <!-- LEFT SIDE -->
+            <div class="location-info">
+
+                <span class="location-tag">
+                    Location
+                </span>
+
+                <h2 class="location-title serif">
+                    Gudibanda, Chikkaballapura
+                </h2>
+
+
+                <!-- HIGHLIGHTS -->
+                <div class="location-points">
+
+                    <div class="point-card">
+                        <div class="point-icon">
+                            <i class="fa-solid fa-plane"></i>
+                        </div>
+
+                        <div class="point-content">
+                            <h3>60 Minutes</h3>
+                            <p>Kempegowda International Airport</p>
+                        </div>
+                    </div>
+
+                    <div class="point-card">
+                        <div class="point-icon">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+
+                        <div class="point-content">
+                            <h3>State Highway Access</h3>
+                            <p>Seamless road connectivity</p>
+                        </div>
+                    </div>
+
+                    <div class="point-card">
+                        <div class="point-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div class="point-content">
+                            <h3>Gudibanda & Chikkaballapura</h3>
+                            <p>Major nearby growth zones</p>
+                        </div>
+                    </div>
+
+                    <div class="point-card">
+                        <div class="point-icon">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+
+                        <div class="point-content">
+                            <h3>Near Gudibande Fort & Lepakshi</h3>
+                            <p>Historic and tourism landmarks</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="location-map-wrapper">
+
+                <div class="map-card">
+                    <iframe
+                        data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d496759.03435481834!2d77.35604574535758!3d13.416662694143273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb195b1c17d4dc7%3A0xd6cf7c485c859fd0!2sNeralu%20Sandal%20valley!5e0!3m2!1sen!2sin!4v1778312909719!5m2!1sen!2sin"
+                        style="border:0;" allowfullscreen="" loading="lazy" fetchpriority="low"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         TESTIMONIALS SECTION
+    ========================================= -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="serif" style="margin-bottom: 40px;">Real People. Real Results.</h2>
+
+            <div class="swiper testimonial-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="banner-box"
+                                style="background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%), url('./image/review/review-banner-1.webp') center/cover no-repeat;">
+                                <img src="./image/review/review-profile-1.png" alt="Profile Photo"
+                                    class="profile-circle">
+                            </div>
+                            <p class="review-text"><span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>Neralu
+                                Farms in Chintamani presents an intriguing opportunity for those interested in
+                                agricultural investments and sustainable farming ventures. Located in the Chintamani
+                                region of Karnataka, the farm benefits from a strategic position that offers
+                                accessibility while maintaining the rural charm essential for agribusiness...<span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span></p>
+                            <div class="attribution">
+                                <strong>Sunil Francis George</strong>
+                                <span>Investor</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="banner-box"
+                                style="background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%), url('./image/review/review-banner-2.webp') center/cover no-repeat;">
+                                <img src="./image/review/review-profile-2.png" alt="Profile Photo"
+                                    class="profile-circle">
+                            </div>
+                            <p class="review-text"><span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>I twisly
+                                visited Neralu Farm, a well-managed farm with 40 different types of plantations, making
+                                it a great investment opportunity. Staying there is peaceful, surrounded by nature, and
+                                the Neralu team was very friendly, providing detailed explanations. Thanks to them, I
+                                highly recommend this place for investment. This is a good place to spend time with
+                                nature.<span style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span></p>
+                            <div class="attribution">
+                                <strong>Hitesh Kumar</strong>
+                                <span>Visitor & Investor</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="banner-box"
+                                style="background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%), url('./image/review/review-banner-3.webp') center/cover no-repeat;">
+                                <img src="./image/review/review-profile-3.png" alt="Profile Photo"
+                                    class="profile-circle">
+                            </div>
+                            <p class="review-text"><span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>It was
+                                such a great experience of having visited Neralu Farms. Firstly I love the name,
+                                'Neralu'. The idea is great, the ambience is so peaceful, varieties of vegetables and by
+                                next year you could see varieties of fruits as well. A must visit place to stay and
+                                spend time with your loved ones in a peaceful place. And yes, another good option to
+                                invest.<span style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span></p>
+                            <div class="attribution">
+                                <strong>georgee george</strong>
+                                <span>Visitor</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="banner-box"
+                                style="background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%), url('./image/review/review-banner-4.webp') center/cover no-repeat;">
+                                <img src="./image/review/review-profile-4.png" alt="Profile Photo"
+                                    class="profile-circle">
+                            </div>
+                            <p class="review-text"><span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>Visited
+                                Neralu farms on 16th of March 2025 .They have huge farm lands and this is the right time
+                                to invest on agriculture land ,which is going to be booming in another 4 to 5 years.
+                                Could see the whole 3 decade experience being poured into the land and it is well
+                                maintained with the plantation. I see this as a great future and with the amenities
+                                available all around it is cool to spend time and to work from farm some times .<span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span></p>
+                            <div class="attribution">
+                                <strong>Kiran Karkera</strong>
+                                <span>Agricultural Investor</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="banner-box"
+                                style="background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%), url('./image/review/review-banner-5.webp') center/cover no-repeat;">
+                                <img src="./image/review/review-profile-5.png" alt="Profile Photo"
+                                    class="profile-circle">
+                            </div>
+                            <p class="review-text"><span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>Neralu
+                                Farm Land is well-maintained and managed. The clubhouse offers a great space to relax,
+                                making it a promising investment and they are offering good returns on investment .I
+                                truly appreciate the Neralu team for organizing cricket tournament with DRB team .
+                                Overall very good experience and it's a good place for hangout with the team<span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span></p>
+                            <div class="attribution">
+                                <strong>Darshan M v</strong>
+                                <span>Team Member</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-bar">
+                    <div class="swiper-button-prev"><i class="fa-solid fa-arrow-left"></i></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================
+     PREMIUM FAQ SECTION
+========================================= -->
+
+    <section class="premium-faq" id="faq">
+
+        <div class="faq-container">
+
+            <!-- SECTION HEADER -->
+            <div class="faq-header">
+
+                <h2 class="faq-title serif">F.A.Q</h2>
+
+            </div>
+
+            <!-- FAQ LIST -->
+            <div class="faq-list">
+
+                <!-- ITEM -->
+                <div class="faq-item active">
+
+                    <button class="faq-question">
+
+                        <span>
+                            How does the managed farmland model work?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            You fully own the farmland while our professional
+                            management team handles plantation maintenance,
+                            irrigation, security, harvesting support, and
+                            long-term upkeep for a seamless ownership experience.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM -->
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Can non-farmers buy agricultural land in Karnataka?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Yes. Recent Karnataka land reforms allow non-farmers
+                            to purchase agricultural land subject to applicable
+                            government regulations and documentation compliance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM -->
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Is the project legally approved?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            The project includes legally verified farmland parcels,
+                            clear documentation, and professional assistance during
+                            the registration and ownership transfer process.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM -->
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            What amenities are available inside the project?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Neralu Sandal Valley offers clubhouse facilities,
+                            luxury cottages, swimming pool, jogging track,
+                            kids play area, fishing pond, dining space,
+                            and gated security infrastructure.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM -->
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Is this suitable for long-term investment?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Managed farmland combined with premium plantation
+                            assets such as Red Sandalwood creates a strong
+                            long-term appreciation opportunity while also
+                            offering lifestyle and legacy value.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Brand & Contact -->
+                <div class="footer-col">
+                    <h3 class="footer-title">CORPORATE OFFICE</h3>
+                    <p class="footer-desc" style="margin-bottom: 15px;">No 302, Manpho Greens Layout,<br>Bagaluru,
+                        Bengaluru,<br>Karnataka 562149</p>
+                    <p style="margin-bottom: 5px;"><i class="fa-solid fa-phone"></i> <a href="tel:+917975937887"
+                            style="color: white; text-decoration: none;">+91 7975937887</a></p>
+                    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@neralufarms.com"
+                            style="color: white; text-decoration: none;">info@neralufarms.com</a></p>
+                </div>
+
+                <!-- Column 2: Our Projects -->
+                <div class="footer-col">
+                    <h3 class="footer-title">EXPLORE PROJECTS</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Neralu Korlaparthi</a></li>
+                        <li><a href="#">Neralu Sandal Valley</a></li>
+                        <li><a href="#">Neralu Brahmasamudra</a></li>
+                        <li><a href="#">Neralu River Stone</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Social Connectivity -->
+                <div class="footer-col">
+                    <h3 class="footer-title">CONNECT WITH US</h3>
+                    <div class="social-icons">
+                        <a href="https://www.youtube.com/@neralufarms" class="social-icon" target="_blank"><i
+                                class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/company/neralu-farms" class="social-icon" target="_blank"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/neralu_farms" class="social-icon" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/neralu.managed.farms" class="social-icon" target="_blank"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Quick Actions -->
+                <div class="footer-col">
+                    <h3 class="footer-title">QUICK ACTIONS</h3>
+                    <p class="footer-desc">Invest in a legacy of managed greenery. Schedule a site visit today.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Neralu Sandal Valley. All Rights Reserved.</p>
+                <div class="legal-links">
+                    <a href="#" class="privacy-link">Privacy Policy</a> |
+                    <a href="#" class="terms-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/917975937887" class="float-btn whatsapp-btn" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:+917975937887" class="float-btn call-btn">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const overlay = document.getElementById('menuOverlay');
+            overlay.classList.toggle('active');
+
+            if (overlay.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: '.glightbox'
+        });
+
+        const swiper = new Swiper('.gallery-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                900: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                }
+            }
+        });
+
+        const testimonialSwiper = new Swiper('.testimonial-swiper', {
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: 1,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 5000,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                bulletClass: 'swiper-pagination-bullet',
+                bulletActiveClass: 'swiper-pagination-bullet-active',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+    <script>
+
+        /* =========================================
+           FAQ ACCORDION FIX
+        ========================================= */
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const faqItems = document.querySelectorAll(".faq-item");
+
+            faqItems.forEach(item => {
+
+                const question = item.querySelector(".faq-question");
+
+                question.addEventListener("click", () => {
+
+                    const activeItem =
+                        document.querySelector(".faq-item.active");
+
+                    if (activeItem && activeItem !== item) {
+                        activeItem.classList.remove("active");
+                    }
+
+                    item.classList.toggle("active");
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Map Lazy Loading with Intersection Observer
+            const mapIframe = document.querySelector('.map-card iframe');
+            if (mapIframe) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const src = mapIframe.getAttribute('data-src');
+                            if (src) {
+                                mapIframe.setAttribute('src', src);
+                                mapIframe.removeAttribute('data-src');
+                            }
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { rootMargin: '500px' });
+
+                const locationSection = document.querySelector('.premium-location');
+                if (locationSection) {
+                    observer.observe(locationSection);
+                }
+            }
+
+            const leadForm = document.getElementById('lead-form'); // Ensure your form has this ID
+
+            if (leadForm) {
+                leadForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Validation Logic: Check for exactly 10 digits
+                    const phoneInput = leadForm.querySelector('input[name="phone"]');
+                    const phoneValue = phoneInput.value.trim();
+                    const phoneRegex = /^[0-9]{10}$/;
+
+                    if (!phoneRegex.test(phoneValue)) {
+                        alert('Please enter a valid 10-digit phone number.');
+                        phoneInput.focus();
+                        return;
+                    }
+
+                    // 1. Visual Feedback: Disable button to prevent double-clicks
+                    const submitBtn = leadForm.querySelector('button[type="submit"]');
+                    const originalBtnText = submitBtn.innerHTML;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = 'Processing...';
+
+                    // 2. Gather Data
+                    const formData = new FormData(this);
+
+                    // 3. The AJAX Call
+                    fetch('../submit-form.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(response => response.text())
+                        .then(data => {
+                            if (data.trim() === 'success') {
+                                // 4. Premium Success Handling
+                                window.location.href = '../thank-you.html';
+                            } else {
+                                // 5. Error Handling
+                                alert('There was a slight issue. Please try again or call us directly.');
+                                submitBtn.disabled = false;
+                                submitBtn.innerHTML = originalBtnText;
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Connection error. Please check your internet and try again.');
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnText;
+                        });
+                });
+            }
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('.swiper-pagination-bullet').forEach(b => b.style.margin = '0 2px');
+    </script>
+
+</body>
+
+</html>
