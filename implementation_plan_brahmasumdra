@@ -1,0 +1,50 @@
+# Create Neralu Brahmasamudra Campaign Page
+
+This plan outlines the steps to create a new campaign page for Neralu Brahmasamudram by duplicating `index.html` and updating the content and styles.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Map Link**: I will use a fallback embed link for Brahmasamudram (`https://maps.google.com/maps?q=Brahmasamudram,Andhra+Pradesh&output=embed`) as I don't have the specific encoded `pb` link. Please verify if this is acceptable or provide the specific link.
+
+> [!IMPORTANT]
+> **Pagination**: I will implement the "Smart Pagination" logic (showing dots like `1 2 ... 31 >`) for the Swiper gallery or as a custom control if needed. Please confirm if this is the intended usage.
+
+## Open Questions
+
+- Is the fallback map link acceptable?
+- Should the smart pagination apply to the Gallery or another specific section?
+
+## Proposed Changes
+
+### Campaign
+
+#### [NEW] [neralu-brahmasamudra.html](file:///c:/Users/gsanj/OneDrive/Documents/neralu-sandal-valley-static/campaign/neralu-brahmasamudra.html)
+- Duplicate of `index.html` with the following changes:
+  - **Color Palette (Option 4)**:
+    - Primary (Royal Navy): `#0A192F`
+    - Accent (Champagne Gold): `#C5A059`
+    - Background (Ivory): `#FDFBF7`
+    - Buttons: `#C5A059` with `#0A192F` text.
+  - **Content Updates**:
+    - Project Name: `Neralu Brahmasamudram`
+    - Headline: `Premium Plotted Development`
+    - Location: `Brahmasamudram, Andhra Pradesh`
+    - Pricing: `Starting from ₹18 Lakhs onwards (₹300 per Sq. Ft.)`
+    - Spec Bar: `Total Area: 100 Acres`
+  - **Section Updates**:
+    - **Why Choose**: Focus on 'fast-developing location' and 'investment opportunity'.
+    - **Nearby Highlights**:
+      - Tourism: `Lepakshi Temple, Kammakote Falls, Madhugiri Fort`.
+      - Schools: `Sri Sathya Sai Higher Secondary School, Narayana School`.
+      - Medical: `Medall Clumax Diagnostic Centre, Sri Sai Clinic`.
+    - **Map**: Update to Brahmasamudram link.
+  - **Media Paths**: Update to `image/brahmasamudra/`.
+  - **Pagination**: Implement Smart Pagination logic.
+
+## Verification Plan
+
+### Manual Verification
+- Open the generated page in the browser to verify the layout, content, and colors.
+- Verify that media paths point to the correct subfolder.
+- Verify that pagination works as expected.
