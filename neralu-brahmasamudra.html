@@ -1116,9 +1116,11 @@
 
         .testimonial-card {
             background: transparent;
-            padding: 20px;
-            min-height: auto !important;
-            padding-bottom: 10px !important;
+            height: auto !important; /* Forces card to grow with the words */
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            padding: 40px 20px !important;
         }
 
         .banner-box {
@@ -1153,7 +1155,10 @@
             line-height: 1.8;
             color: #333;
             margin: 60px 0 10px 0 !important;
-            font-style: italic;
+            font-style: italic !important;
+            overflow: visible !important; /* Prevents word cutoff */
+            display: block !important;
+            height: auto !important;
         }
 
         .review-text::before {
@@ -1325,15 +1330,18 @@
             }
 
             .specs-bar {
-                flex-direction: column;
-                gap: 30px;
-                text-align: center;
+                flex-direction: column !important;
+                align-items: center !important;
+                width: 100% !important;
+                gap: 15px !important;
             }
 
             .specs-bar-item {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
+                width: 90% !important;
+                min-width: unset !important;
+                flex: none !important;
+                aspect-ratio: unset !important;
+                padding: 25px !important;
             }
         }
 
@@ -1363,7 +1371,22 @@
             }
 
             .amenities-column ul {
-                grid-template-columns: 1fr !important;
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 10px !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+
+            .amenities-column ul li {
+                padding: 15px !important;
+                background: rgba(255,255,255,0.05) !important;
+                border: 1px solid rgba(197, 160, 89, 0.3) !important;
+            }
+
+            .testimonial-card {
+                padding: 20px !important;
+                min-height: 300px !important;
             }
 
             /* Brahmasamudram Specific Fixes */
@@ -1380,6 +1403,24 @@
 
             .specs-bar-item .icon-wrapper {
                 justify-content: center !important;
+            }
+
+            .footer-grid {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                gap: 40px !important;
+            }
+
+            .footer-col {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+
+            .footer-bottom {
+                flex-direction: column !important;
+                gap: 20px !important;
+                text-align: center !important;
             }
 
             @media (max-width: 480px) {
@@ -1773,7 +1814,7 @@
     ========================================= -->
     <section id="testimonials">
         <div class="container">
-            <h2 class="serif" style="margin-bottom: 40px; color: var(--dark-navy);">Real People. Real Results.</h2>
+            <h2 class="serif" style="margin-bottom: 40px;">Real People. Real Results.</h2>
 
             <div class="swiper testimonial-swiper">
                 <div class="swiper-wrapper">
@@ -1785,8 +1826,13 @@
                                 <img src="image/review/review-profile-1.png" alt="Profile Photo"
                                     class="profile-circle">
                             </div>
-                            <p class="review-text">Neralu Farms presents an intriguing opportunity for those interested
-                                in agricultural investments and sustainable farming ventures...</p>
+                            <p class="review-text"><span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>Neralu
+                                Farms in Chintamani presents an intriguing opportunity for those interested in
+                                agricultural investments and sustainable farming ventures. Located in the Chintamani
+                                region of Karnataka, the farm benefits from a strategic position that offers
+                                accessibility while maintaining the rural charm essential for agribusiness...<span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span></p>
                             <div class="attribution">
                                 <strong>Sunil Francis George</strong>
                                 <span>Investor</span>
@@ -1801,8 +1847,13 @@
                                 <img src="image/review/review-profile-2.png" alt="Profile Photo"
                                     class="profile-circle">
                             </div>
-                            <p class="review-text">I recently visited Neralu Farm, a well-managed farm with 40 different
-                                types of plantations, making it a great investment opportunity...</p>
+                            <p class="review-text"><span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>I twisly
+                                visited Neralu Farm, a well-managed farm with 40 different types of plantations, making
+                                it a great investment opportunity. Staying there is peaceful, surrounded by nature, and
+                                the Neralu team was very friendly, providing detailed explanations. Thanks to them, I
+                                highly recommend this place for investment. This is a good place to spend time with
+                                nature.<span style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span></p>
                             <div class="attribution">
                                 <strong>Hitesh Kumar</strong>
                                 <span>Visitor & Investor</span>
@@ -1817,11 +1868,13 @@
                                 <img src="image/review/review-profile-3.png" alt="Profile Photo"
                                     class="profile-circle">
                             </div>
-                            <p class="review-text">It was such a great experience of having visited Neralu Farms.
-                                Firstly I love the name, 'Neralu'. The idea is great, the ambience is so peaceful,
-                                varieties of vegetables and by next year you could see varieties of fruits as well. A
-                                must visit place to stay and spend time with your loved ones in a peaceful place. And
-                                yes, another good option to invest.</p>
+                            <p class="review-text"><span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>It was
+                                such a great experience of having visited Neralu Farms. Firstly I love the name,
+                                'Neralu'. The idea is great, the ambience is so peaceful, varieties of vegetables and by
+                                next year you could see varieties of fruits as well. A must visit place to stay and
+                                spend time with your loved ones in a peaceful place. And yes, another good option to
+                                invest.<span style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span></p>
                             <div class="attribution">
                                 <strong>georgee george</strong>
                                 <span>Visitor</span>
@@ -1836,12 +1889,14 @@
                                 <img src="image/review/review-profile-4.png" alt="Profile Photo"
                                     class="profile-circle">
                             </div>
-                            <p class="review-text">Visited Neralu farms on 16th of March 2025 .They have huge farm lands
-                                and this is the right time to invest on agriculture land ,which is going to be booming
-                                in another 4 to 5 years. Could see the whole 3 decade experience being poured into the
-                                land and it is well maintained with the plantation. I see this as a great future and
-                                with the amenities available all around it is cool to spend time and to work from farm
-                                some times .</p>
+                            <p class="review-text"><span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>Visited
+                                Neralu farms on 16th of March 2025 .They have huge farm lands and this is the right time
+                                to invest on agriculture land ,which is going to be booming in another 4 to 5 years.
+                                Could see the whole 3 decade experience being poured into the land and it is well
+                                maintained with the plantation. I see this as a great future and with the amenities
+                                available all around it is cool to spend time and to work from farm some times .<span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span></p>
                             <div class="attribution">
                                 <strong>Kiran Karkera</strong>
                                 <span>Agricultural Investor</span>
@@ -1856,11 +1911,13 @@
                                 <img src="image/review/review-profile-5.png" alt="Profile Photo"
                                     class="profile-circle">
                             </div>
-                            <p class="review-text">Neralu Farm Land is well-maintained and managed. The clubhouse offers
-                                a great space to relax, making it a promising investment and they are offering good
-                                returns on investment .I truly appreciate the Neralu team for organizing cricket
-                                tournament with DRB team . Overall very good experience and it's a good place for
-                                hangout with the team</p>
+                            <p class="review-text"><span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>Neralu
+                                Farm Land is well-maintained and managed. The clubhouse offers a great space to relax,
+                                making it a promising investment and they are offering good returns on investment .I
+                                truly appreciate the Neralu team for organizing cricket tournament with DRB team .
+                                Overall very good experience and it's a good place for hangout with the team<span
+                                    style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span></p>
                             <div class="attribution">
                                 <strong>Darshan M v</strong>
                                 <span>Team Member</span>
