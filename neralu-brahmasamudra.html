@@ -23,8 +23,13 @@
             --text-muted: #555555;
         }
 
-        html, body { overflow-x: hidden !important; width: 100% !important; position: relative !important; }
-        
+        html,
+        body {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            position: relative !important;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -464,100 +469,72 @@
 
         /* --- MASTERPLAN & AMENITIES --- */
         #masterplan-amenities {
-            height: auto !important;
-            min-height: auto !important;
-            background: linear-gradient(135deg, #FDFBF7 0%, #F5F0E8 100%);
-            padding: 40px 0 !important;
-            margin-bottom: 80px !important;
-            position: relative;
-            display: block !important;
-            clear: both;
-            overflow: hidden;
+            background: #0A192F !important; /* Keep Brahmasamudra Navy */
+            padding: 80px 0 !important;
         }
 
         .masterplan-grid {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 50px !important;
+            max-width: 1300px !important;
+            margin: 0 auto !important;
         }
 
         .masterplan-column {
-            position: relative;
-            flex: 1;
-            z-index: 1;
-            line-height: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; /* Forces the image to the horizontal center */
+            justify-content: center !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            padding: 20px !important;
         }
 
-        .masterplan-column img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--champagne-gold);
-            transition: transform 0.3s ease;
-        }
-
-        .masterplan-column:hover img {
-            transform: scale(1.02);
-        }
-
-        .amenities-column {
-            flex: 1;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 40px;
+        #masterplan-img {
+            display: block !important;
+            margin: 0 auto !important; /* Second layer of centering insurance */
+            width: 100% !important;
+            max-width: 550px !important; /* Limits size to match your design */
+            border: 2px solid #C5A059 !important; /* Champagne Gold Frame */
+            border-radius: 12px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
         }
 
         .amenities-column h2 {
-            color: var(--dark-navy);
+            color: #FFFFFF !important;
             font-size: 3rem;
             margin-bottom: 20px;
             font-family: 'Playfair Display', serif;
         }
 
         .amenities-column ul {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 12px !important;
             list-style: none;
             padding: 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
         }
 
         .amenities-column ul li {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(197, 160, 89, 0.3) !important;
+            border-radius: 10px !important; /* Standard Card Shape, NOT Pill */
+            padding: 20px !important;
+            color: #FFFFFF !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 15px !important;
             font-size: 0.85rem;
-            color: #1A1A1A;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 12px 20px;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(5px);
-            border-radius: 8px;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
         }
 
         .amenities-column ul li i {
-            color: var(--champagne-gold);
-            font-size: 1.2rem;
-            width: 24px;
-            text-align: center;
-        }
-
-        .amenities-column ul li:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            border-color: rgba(197, 160, 89, 0.3);
+            color: #C5A059 !important;
+            font-size: 1.5rem !important;
+            margin-right: 15px !important;
         }
 
         /* =========================================
@@ -1118,7 +1095,8 @@
 
         .testimonial-card {
             background: transparent;
-            height: auto !important; /* Forces card to grow with the words */
+            height: auto !important;
+            /* Forces card to grow with the words */
             display: flex !important;
             flex-direction: column !important;
             justify-content: center !important;
@@ -1158,7 +1136,8 @@
             color: #333;
             margin: 60px 0 10px 0 !important;
             font-style: italic !important;
-            overflow: visible !important; /* Prevents word cutoff */
+            overflow: visible !important;
+            /* Prevents word cutoff */
             display: block !important;
             height: auto !important;
         }
@@ -1394,10 +1373,12 @@
                 justify-content: flex-start !important;
                 text-align: left !important;
                 opacity: 1 !important;
-                transform: none !important; /* Disable broken reveal animations */
+                transform: none !important;
+                /* Disable broken reveal animations */
             }
 
-            .amenities-column ul li i, .amenities-column ul li img {
+            .amenities-column ul li i,
+            .amenities-column ul li img {
                 margin-right: 15px !important;
             }
 
@@ -1431,12 +1412,17 @@
             .footer-grid {
                 display: flex !important;
                 flex-direction: column !important;
-                align-items: flex-start !important; /* This kills the centering */
+                align-items: flex-start !important;
+                /* This kills the centering */
                 text-align: left !important;
                 gap: 30px !important;
             }
 
-            .footer-col, .footer-col h3, .footer-col p, .footer-col a, .footer-col div {
+            .footer-col,
+            .footer-col h3,
+            .footer-col p,
+            .footer-col a,
+            .footer-col div {
                 text-align: left !important;
                 width: 100% !important;
                 margin-left: 0 !important;
@@ -1453,7 +1439,7 @@
             .footer-bottom {
                 flex-direction: column !important;
                 gap: 15px !important;
-                border-top: 1px solid rgba(255,255,255,0.1) !important;
+                border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
                 padding-top: 20px !important;
             }
 
@@ -1481,13 +1467,16 @@
             }
 
             /* Hero Section Cleanup */
-            .hero, .hero-video-left, .hero-image {
+            .hero,
+            .hero-video-left,
+            .hero-image {
                 max-width: 100% !important;
             }
 
             /* Menu Fixes */
-            .menu-links a { 
-                font-size: 2rem !important; /* Reduced from 3rem+ to fit screen width */
+            .menu-links a {
+                font-size: 2rem !important;
+                /* Reduced from 3rem+ to fit screen width */
                 margin: 15px 0 !important;
                 letter-spacing: 1px !important;
             }
@@ -1526,100 +1515,64 @@
             }
         }
 
-@media (max-width: 768px) {
-    /* 1. FORCE AMENITIES TO LEFT-ALIGNED PILLS */
-    #masterplan-amenities .amenities-column ul {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important; /* Centers the stack of pills */
-        padding: 0 20px !important;
-        gap: 12px !important;
-    }
-    #masterplan-amenities .amenities-column ul li {
-        width: 100% !important;
-        max-width: 340px !important;
-        justify-content: flex-start !important; /* Forces text/icon to the left inside the pill */
-        text-align: left !important;
-        background: #FFFFFF !important;
-        border: 1px solid #C5A059 !important;
-        border-radius: 50px !important;
-        padding: 12px 25px !important;
-        display: flex !important;
-    }
+        @media (max-width: 768px) {
+            .masterplan-grid {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
+            .masterplan-column {
+                padding: 20px 10px !important;
+            }
+            #masterplan-img {
+                width: 92vw !important; /* Balanced centering with side margins */
+                max-width: 100% !important;
+            }
+            .amenities-column ul {
+                grid-template-columns: 1fr !important;
+                display: grid !important;
+                gap: 12px !important;
+            }
+            .amenities-column ul li {
+                width: 100% !important;
+                max-width: none !important;
+                border-radius: 10px !important;
+            }
 
-    /* 2. FORCE FOOTER TO LEFT ALIGN (MATCH SANDAL VALLEY) */
-    footer .container {
-        text-align: left !important;
-        padding: 40px 20px !important;
-    }
-    footer .footer-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important; /* Kills the centering */
-        gap: 30px !important;
-    }
-    footer .footer-col, footer .footer-col h3, footer .footer-col p, footer .footer-col a {
-        text-align: left !important;
-        width: 100% !important;
-        margin: 0 !important;
-    }
-    footer .social-icons, footer .social-links {
-        justify-content: flex-start !important;
-        display: flex !important;
-    }
+            /* Footer Final Alignment */
+            footer .container {
+                text-align: left !important;
+                padding: 40px 20px !important;
+            }
 
-    /* 3. FIX 360 TITLE SIZE */
-    #virtual-tour h2 {
-        font-size: 1.6rem !important;
-        line-height: 1.3 !important;
-    }
-}
-@media (max-width: 768px) {
-    /* 1. AMENITIES: FORCE LEFT ALIGNMENT INSIDE PILLS */
-    .amenities-column ul {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important; /* Centers the stack on screen */
-        padding: 0 20px !important;
-    }
+            footer .footer-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 30px !important;
+            }
 
-    .amenities-column ul li {
-        width: 100% !important;
-        max-width: 350px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-start !important; /* FORCES ICON AND TEXT TO LEFT */
-        text-align: left !important;
-        background: #FFFFFF !important;
-        border: 1px solid #C5A059 !important;
-        border-radius: 50px !important;
-        padding: 12px 25px !important;
-        color: #0A192F !important;
-    }
+            footer .footer-col,
+            footer .footer-col h3,
+            footer .footer-col p,
+            footer .footer-col a {
+                text-align: left !important;
+                width: 100% !important;
+                margin: 0 !important;
+            }
+        }
 
-    .amenities-column ul li i {
-        margin-right: 15px !important; /* Correct spacing for icons */
-        width: 25px !important;
-        text-align: center !important;
-    }
+            footer .social-icons,
+            footer .social-links {
+                justify-content: flex-start !important;
+                display: flex !important;
+            }
 
-    /* 2. FOOTER: FORCE LEFT ALIGNMENT */
-    .footer-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important; /* Kills the centering */
-        text-align: left !important;
-    }
-
-    .footer-col, .footer-col h3, .footer-col p, .footer-col a {
-        text-align: left !important;
-        margin: 0 0 15px 0 !important;
-    }
-
-    .social-icons {
-        justify-content: flex-start !important;
-    }
-}
+            /* 3. FIX 360 TITLE SIZE */
+            #virtual-tour h2 {
+                font-size: 1.6rem !important;
+                line-height: 1.3 !important;
+            }
+        }
     </style>
 </head>
 
@@ -1806,22 +1759,17 @@
 
     <section id="masterplan-amenities">
         <div class="masterplan-grid">
-
-            <!-- Left Column: Masterplan -->
             <div class="masterplan-column">
                 <a href="image/valley_plan.webp" class="glightbox" style="display: block; width: 100%; height: 100%;"
-                    data-glightbox="title: Masterplan; description: View the detailed plot layout of Neralu Brahmasamudram;">
+                    data-glightbox="title: Masterplan; description: View the detailed plot layout;">
                     <img src="image/valley_plan.webp" alt="Masterplan Layout" id="masterplan-img">
                 </a>
-
-                <!-- Zoom Button -->
                 <div
-                    style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.8); color: var(--dark-navy); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none;">
+                    style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.8); color: #1B4332; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none;">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
 
-            <!-- Right Column: Amenities -->
             <div class="amenities-column">
                 <h2 class="serif">World-Class Amenities</h2>
                 <ul>
@@ -1836,7 +1784,6 @@
                     <li><i class="fa-solid fa-shield-halved"></i> Gated Security</li>
                 </ul>
             </div>
-
         </div>
     </section>
 
@@ -2004,8 +1951,7 @@
                         <div class="testimonial-card">
                             <div class="banner-box"
                                 style="background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%), url('image/review/review-banner-1.webp') center/cover no-repeat;">
-                                <img src="image/review/review-profile-1.png" alt="Profile Photo"
-                                    class="profile-circle">
+                                <img src="image/review/review-profile-1.png" alt="Profile Photo" class="profile-circle">
                             </div>
                             <p class="review-text"><span
                                     style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>Neralu
@@ -2025,8 +1971,7 @@
                         <div class="testimonial-card">
                             <div class="banner-box"
                                 style="background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%), url('image/review/review-banner-2.webp') center/cover no-repeat;">
-                                <img src="image/review/review-profile-2.png" alt="Profile Photo"
-                                    class="profile-circle">
+                                <img src="image/review/review-profile-2.png" alt="Profile Photo" class="profile-circle">
                             </div>
                             <p class="review-text"><span
                                     style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>I twisly
@@ -2046,8 +1991,7 @@
                         <div class="testimonial-card">
                             <div class="banner-box"
                                 style="background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%), url('image/review/review-banner-3.webp') center/cover no-repeat;">
-                                <img src="image/review/review-profile-3.png" alt="Profile Photo"
-                                    class="profile-circle">
+                                <img src="image/review/review-profile-3.png" alt="Profile Photo" class="profile-circle">
                             </div>
                             <p class="review-text"><span
                                     style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>It was
@@ -2067,8 +2011,7 @@
                         <div class="testimonial-card">
                             <div class="banner-box"
                                 style="background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%), url('image/review/review-banner-4.webp') center/cover no-repeat;">
-                                <img src="image/review/review-profile-4.png" alt="Profile Photo"
-                                    class="profile-circle">
+                                <img src="image/review/review-profile-4.png" alt="Profile Photo" class="profile-circle">
                             </div>
                             <p class="review-text"><span
                                     style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>Visited
@@ -2089,8 +2032,7 @@
                         <div class="testimonial-card">
                             <div class="banner-box"
                                 style="background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%), url('image/review/review-banner-5.webp') center/cover no-repeat;">
-                                <img src="image/review/review-profile-5.png" alt="Profile Photo"
-                                    class="profile-circle">
+                                <img src="image/review/review-profile-5.png" alt="Profile Photo" class="profile-circle">
                             </div>
                             <p class="review-text"><span
                                     style="color: #D4AF37; font-size: 1.5rem; font-weight: bold;"></span>Neralu
@@ -2197,6 +2139,7 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
+                <!-- Column 1: Brand & Contact -->
                 <div class="footer-col">
                     <h3 class="footer-title">CORPORATE OFFICE</h3>
                     <p class="footer-desc" style="margin-bottom: 15px;">No 302, Manpho Greens Layout,<br>Bagaluru,
@@ -2207,6 +2150,7 @@
                             style="color: white; text-decoration: none;">info@neralufarms.com</a></p>
                 </div>
 
+                <!-- Column 2: Our Projects -->
                 <div class="footer-col">
                     <h3 class="footer-title">EXPLORE PROJECTS</h3>
                     <ul class="footer-links">
@@ -2217,6 +2161,7 @@
                     </ul>
                 </div>
 
+                <!-- Column 3: Social Connectivity -->
                 <div class="footer-col">
                     <h3 class="footer-title">CONNECT WITH US</h3>
                     <div class="social-icons">
@@ -2231,6 +2176,7 @@
                     </div>
                 </div>
 
+                <!-- Column 4: Quick Actions -->
                 <div class="footer-col">
                     <h3 class="footer-title">QUICK ACTIONS</h3>
                     <p class="footer-desc">Invest in a legacy of managed greenery. Schedule a site visit today.</p>
@@ -2238,7 +2184,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Neralu Brahmasamudram. All Rights Reserved.</p>
+                <p>&copy; 2026 Neralu Sandal Valley. All Rights Reserved.</p>
                 <div class="legal-links">
                     <a href="#" class="privacy-link">Privacy Policy</a> |
                     <a href="#" class="terms-link">Terms of Service</a>
