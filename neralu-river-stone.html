@@ -67,7 +67,7 @@
             width: 90%;
             max-width: 1300px;
             /* Premium translucent Slate Blue overlay background glass track */
-            background: rgba(43, 76, 126, 0.9) !important; 
+            background: rgba(43, 76, 126, 0.9) !important;
             backdrop-filter: blur(14px) !important;
             -webkit-backdrop-filter: blur(14px) !important;
             border: 1px solid rgba(255, 255, 255, 0.2) !important;
@@ -94,7 +94,7 @@
             width: auto;
             display: block;
             /* Inverts the dark brand logo to high-contrast white text against the glass navbar tracker */
-            filter: brightness(0) invert(1) !important; 
+            filter: brightness(0) invert(1) !important;
         }
 
         .hamburger {
@@ -114,7 +114,7 @@
         .hamburger span {
             display: block !important;
             /* High-impact Vivid Amber Sunset lines across the Slate Blue glass header tracker track */
-            background-color: #E09F3E !important; 
+            background-color: #E09F3E !important;
             width: 26px !important;
             height: 3px !important;
             transition: all 0.3s ease;
@@ -132,7 +132,8 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background-color: var(--text-dark) !important; /* Deep contrast dark canvas backdrop */
+            background-color: var(--text-dark) !important;
+            /* Deep contrast dark canvas backdrop */
             z-index: 2000;
             display: flex !important;
             align-items: center !important;
@@ -152,7 +153,8 @@
             top: 40px;
             right: 5%;
             font-size: 2.5rem;
-            color: var(--amber-sunset) !important; /* Vivid amber visibility mark */
+            color: var(--amber-sunset) !important;
+            /* Vivid amber visibility mark */
             cursor: pointer;
             transition: transform 0.3s ease;
             line-height: 1;
@@ -167,12 +169,15 @@
 
         .menu-links li {
             margin: 25px 0 !important;
-            opacity: 1 !important; /* Ensures stability */
-            transform: none !important; /* Prevents transform conflicts */
+            opacity: 1 !important;
+            /* Ensures stability */
+            transform: none !important;
+            /* Prevents transform conflicts */
         }
 
         .menu-links a {
-            color: var(--amber-sunset) !important; /* Clear legible portfolio menu links */
+            color: var(--amber-sunset) !important;
+            /* Clear legible portfolio menu links */
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem !important;
             text-decoration: none;
@@ -181,7 +186,8 @@
             display: inline-block;
         }
 
-        .menu-links a:hover, .close-menu:hover {
+        .menu-links a:hover,
+        .close-menu:hover {
             color: var(--white) !important;
         }
 
@@ -247,9 +253,10 @@
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
         }
 
-        .hero-content h2, 
+        .hero-content h2,
         .hero-right .hero-content h2.serif {
-            color: var(--white) !important; /* Pure Crisp White */
+            color: var(--white) !important;
+            /* Pure Crisp White */
             opacity: 0.95 !important;
             font-size: 1.8rem !important;
             font-weight: 500 !important;
@@ -277,11 +284,13 @@
         }
 
         /* --- HERO CTA BUTTON --- */
-        .btn-hero, 
+        .btn-hero,
         .hero-content .btn-hero {
             display: inline-block;
-            background-color: var(--amber-sunset) !important; /* Warm Amber Base */
-            color: #FFFFFF !important; /* Pure White text for crisp reading */
+            background-color: var(--amber-sunset) !important;
+            /* Warm Amber Base */
+            color: #FFFFFF !important;
+            /* Pure White text for crisp reading */
             padding: 16px 40px !important;
             font-size: 1rem;
             font-weight: 700 !important;
@@ -289,15 +298,18 @@
             letter-spacing: 1px !important;
             text-decoration: none;
             border-radius: 8px !important;
-            box-shadow: 0 10px 25px rgba(224, 159, 62, 0.3) !important; /* Elegant matching glow */
+            box-shadow: 0 10px 25px rgba(224, 159, 62, 0.3) !important;
+            /* Elegant matching glow */
             transition: all 0.3s ease !important;
             margin-top: 10px;
         }
 
-        .btn-hero:hover, 
+        .btn-hero:hover,
         .hero-content .btn-hero:hover {
-            background-color: var(--white) !important; /* Flips to crisp white on hover */
-            color: var(--slate-blue) !important; /* Text shifts to clean slate */
+            background-color: var(--white) !important;
+            /* Flips to crisp white on hover */
+            color: var(--slate-blue) !important;
+            /* Text shifts to clean slate */
             transform: translateY(-2px) !important;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4) !important;
         }
@@ -1882,23 +1894,39 @@
            ======================================================== */
 
         /* 1. Base Body Canvas & Text Color */
-        body, #enquire, #faq, .lead-section {
+        body,
+        #enquire,
+        #faq,
+        .lead-section {
             background-color: var(--pearl-white) !important;
             color: var(--slate-blue) !important;
         }
 
         /* 2. Alternate Section Backgrounds */
-        #project-specs, .gallery-section, #testimonials {
+        #project-specs,
+        .gallery-section,
+        #testimonials {
             background: var(--stone-grey) !important;
         }
 
         /* 3. Headings & Text Color Consistency */
-        h1, h2, h3, h4, .serif, .section-title, .location-title, .section-title-amenities, .amenities-column h2 {
+        h1,
+        h2,
+        h3,
+        h4,
+        .serif,
+        .section-title,
+        .location-title,
+        .section-title-amenities,
+        .amenities-column h2 {
             color: var(--slate-blue) !important;
         }
-        .lead-info h3, .lead-form h3 {
+
+        .lead-info h3,
+        .lead-form h3 {
             color: var(--slate-blue) !important;
         }
+
         .why-list strong {
             color: var(--slate-blue) !important;
         }
@@ -1909,9 +1937,11 @@
             padding: 80px 0 !important;
             margin-bottom: 0 !important;
         }
+
         #masterplan-amenities h2 {
             color: #FFFFFF !important;
         }
+
         .amenities-column ul li {
             background: var(--pearl-white) !important;
             border: 1px solid rgba(43, 76, 126, 0.1) !important;
@@ -1919,6 +1949,7 @@
             border-radius: 12px !important;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
         }
+
         .amenities-column ul li i {
             color: var(--amber-sunset) !important;
         }
@@ -1928,56 +1959,76 @@
             border-top: 1px solid var(--slate-blue) !important;
             border-bottom: 1px solid rgba(43, 76, 126, 0.2) !important;
         }
+
         #project-specs::before {
             background: var(--amber-sunset) !important;
         }
+
         .specs-bar-item {
             background: var(--slate-blue) !important;
             border: 1px solid rgba(224, 159, 62, 0.3) !important;
         }
+
         .specs-bar-item .icon-wrapper svg {
             fill: var(--amber-sunset) !important;
         }
+
         .specs-data {
             color: var(--amber-sunset) !important;
         }
+
         .specs-label {
             color: #FFFFFF !important;
         }
 
         /* 6. 360° Virtual Tour & Map Framing */
-        #virtual-tour, .project-detail-custom.pd-virtual-tour {
+        #virtual-tour,
+        .project-detail-custom.pd-virtual-tour {
             background-color: var(--slate-blue) !important;
         }
+
         #virtual-tour h2 {
             color: #FFFFFF !important;
         }
+
         .tour-container iframe {
             border: 2px solid var(--amber-sunset) !important;
         }
+
         .point-icon {
             background: linear-gradient(135deg, var(--slate-blue), var(--text-dark)) !important;
         }
+
         .point-icon i {
             color: var(--amber-sunset) !important;
         }
+
         .location-tag {
             background-color: var(--slate-blue) !important;
             color: #FFFFFF !important;
         }
+
         .location-title {
             color: var(--slate-blue) !important;
         }
 
         /* 7. Interactive Components & Call-to-Actions */
-        .btn-hero, .btn-submit, .pd-location-btn, .spec-download-btn, .btn-hero-download {
+        .btn-hero,
+        .btn-submit,
+        .pd-location-btn,
+        .spec-download-btn,
+        .btn-hero-download {
             background-color: var(--slate-blue) !important;
             color: #FFFFFF !important;
             border: none !important;
             border-radius: 8px !important;
             font-weight: 600 !important;
         }
-        .btn-hero:hover, .btn-submit:hover, .pd-location-btn:hover, .spec-download-btn:hover {
+
+        .btn-hero:hover,
+        .btn-submit:hover,
+        .pd-location-btn:hover,
+        .spec-download-btn:hover {
             background-color: var(--amber-sunset) !important;
             color: #FFFFFF !important;
             box-shadow: 0 8px 20px rgba(224, 159, 62, 0.25) !important;
@@ -1985,23 +2036,31 @@
 
         /* --- THE CRITICAL LAYER CLEANUP --- */
         /* Symmetrize line 431 conflict to prevent stripping mobile navigation properties */
-        .why-list .list-icon i, .card-location i, .form-group i {
+        .why-list .list-icon i,
+        .card-location i,
+        .form-group i {
             background-color: transparent !important;
             color: var(--amber-sunset) !important;
         }
+
         .status-badge {
             background-color: var(--amber-sunset) !important;
             color: #FFFFFF !important;
         }
-        .control-bar .swiper-button-prev, .control-bar .swiper-button-next {
+
+        .control-bar .swiper-button-prev,
+        .control-bar .swiper-button-next {
             color: var(--slate-blue) !important;
         }
+
         .testimonial-swiper .swiper-pagination-bullet-active {
             background: var(--amber-sunset) !important;
         }
+
         .faq-title {
             color: var(--slate-blue) !important;
         }
+
         .faq-question i {
             color: var(--amber-sunset) !important;
         }
@@ -2012,13 +2071,18 @@
             padding-bottom: 80px !important;
             border-top: 1px solid rgba(43, 76, 126, 0.08) !important;
         }
-        footer.cinematic-footer, .footer-details-section, footer {
+
+        footer.cinematic-footer,
+        .footer-details-section,
+        footer {
             background-color: var(--text-dark) !important;
             color: #FFFFFF !important;
         }
+
         .footer-col h3.footer-title {
             color: var(--amber-sunset) !important;
         }
+
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
         }
@@ -2050,7 +2114,7 @@
                 <li><a href="neralu-korlaparthi.html">Neralu Korlaparthi</a></li>
                 <li><a href="index.html">Neralu Sandal Valley</a></li>
                 <li><a href="neralu-brahmasamudra.html">Neralu Brahmasamudra</a></li>
-                <li><a href="#">Neralu River Stone</a></li>
+                <li><a href="neralu-river-stone.html">Neralu River Stone</a></li>
             </ul>
         </div>
     </div>
@@ -2067,7 +2131,8 @@
             <div class="hero-content">
                 <h1 class="serif">Neralu<br>River-Stone</h1>
                 <h2 class="serif">Premium Villa Plot Development</h2>
-                <p>A thoughtfully planned villa plot community designed for peaceful living, long-term investment, and future growth starting from 1,200 Sq. Ft. onwards.</p>
+                <p>A thoughtfully planned villa plot community designed for peaceful living, long-term investment, and
+                    future growth starting from 1,200 Sq. Ft. onwards.</p>
                 <a href="#enquire" class="btn-hero">Download Brochure</a>
             </div>
         </div>
@@ -2115,7 +2180,8 @@
             </div>
 
             <p class="specs-summary">
-                A thoughtfully planned villa plot community designed for peaceful living, long-term investment, and future growth starting from 1,200 Sq. Ft. onwards.
+                A thoughtfully planned villa plot community designed for peaceful living, long-term investment, and
+                future growth starting from 1,200 Sq. Ft. onwards.
             </p>
         </div>
     </section>
@@ -2135,24 +2201,30 @@
                             <div class="list-icon" style="color: var(--gold); font-size: 1.5rem;"><i
                                     class="fa-solid fa-file-signature"></i></div>
                             <div>
-                                <strong style="display: block; color: var(--dark-green); font-size: 1.1rem;">BIAAPA & BMRDA Approved</strong>
-                                <span style="font-size: 0.95rem; color: #666;">Fully cleared, premium legal titles ready for immediate villa construction and secure asset appreciation.</span>
+                                <strong style="display: block; color: var(--dark-green); font-size: 1.1rem;">BIAAPA &
+                                    BMRDA Approved</strong>
+                                <span style="font-size: 0.95rem; color: #666;">Fully cleared, premium legal titles ready
+                                    for immediate villa construction and secure asset appreciation.</span>
                             </div>
                         </li>
                         <li style="margin-bottom: 25px; display: flex; gap: 15px; align-items: center;">
                             <div class="list-icon" style="color: var(--gold); font-size: 1.5rem;"><i
                                     class="fa-solid fa-plug-circle-bolt"></i></div>
                             <div>
-                                <strong style="display: block; color: var(--dark-green); font-size: 1.1rem;">Underground Infrastructure</strong>
-                                <span style="font-size: 0.95rem; color: #666;">Modern underground electricity cabling and storm-water drains designed to protect your luxury living aesthetics.</span>
+                                <strong style="display: block; color: var(--dark-green); font-size: 1.1rem;">Underground
+                                    Infrastructure</strong>
+                                <span style="font-size: 0.95rem; color: #666;">Modern underground electricity cabling
+                                    and storm-water drains designed to protect your luxury living aesthetics.</span>
                             </div>
                         </li>
                         <li style="margin-bottom: 25px; display: flex; gap: 15px; align-items: center;">
                             <div class="list-icon" style="color: var(--gold); font-size: 1.5rem;"><i
                                     class="fa-solid fa-arrow-trend-up"></i></div>
                             <div>
-                                <strong style="display: block; color: var(--dark-green); font-size: 1.1rem;">Strategic Growth Zone</strong>
-                                <span style="font-size: 0.95rem; color: #666;">Positioned beautifully in a rapidly expanding Bangalore corridor with high rental yield potentials.</span>
+                                <strong style="display: block; color: var(--dark-green); font-size: 1.1rem;">Strategic
+                                    Growth Zone</strong>
+                                <span style="font-size: 0.95rem; color: #666;">Positioned beautifully in a rapidly
+                                    expanding Bangalore corridor with high rental yield potentials.</span>
                             </div>
                         </li>
                     </ul>
@@ -2693,7 +2765,7 @@
                         <li><a href="neralu-korlaparthi.html">Neralu Korlaparthi</a></li>
                         <li><a href="index.html">Neralu Sandal Valley</a></li>
                         <li><a href="neralu-brahmasamudra.html">Neralu Brahmasamudra</a></li>
-                        <li><a href="#">Neralu River Stone</a></li>
+                        <li><a href="neralu-river-stone.html">Neralu River Stone</a></li>
                     </ul>
                 </div>
 
