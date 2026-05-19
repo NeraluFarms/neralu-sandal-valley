@@ -289,29 +289,29 @@
            ======================================================== */
         @media (max-width: 480px) {
             .about-counters-wrap {
-                margin-top: 60px !important;
+                margin-top: 50px !important;
                 padding: 0 !important;
-                min-height: 620px !important; /* Creates vertical space for the circular overlap cluster */
+                min-height: 560px !important; /* Forces vertical clear space for overlapping spheres */
                 display: flex !important;
                 justify-content: center !important;
                 align-items: center !important;
             }
 
-            /* Custom organic container blueprint */
+            /* Fixed: Restores organic boundary space parameters to avoid horizontal screen leaks */
             .counter-circle-container {
                 position: relative !important;
                 display: block !important;
                 width: 100% !important;
-                max-width: 340px !important; /* Prevents overflow while keeping circles large */
-                height: 580px !important;
+                max-width: 320px !important; /* Fixed dimension limits to lock structural center alignment */
+                height: 520px !important;
                 margin: 0 auto !important;
                 gap: 0 !important;
             }
 
-            /* Resets the boxes into perfect luxury glass spheres */
+            /* Fixed: Standardizes circles into clear organic shapes instead of flat ovals */
             .counter-circle {
-                position: absolute !important; /* Essential for premium layout overlapping styling */
-                border-radius: 50% !important; /* Forces absolute circular geometry layout */
+                position: absolute !important; /* Critical for multi-layered absolute depth stacking */
+                border-radius: 50% !important; /* Enforces a perfect sphere canvas layout */
                 background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
                 backdrop-filter: blur(12px) !important;
                 -webkit-backdrop-filter: blur(12px) !important;
@@ -325,12 +325,12 @@
                 padding: 10px !important;
             }
 
-            /* Premium Asymmetric Positioning Strategy (X, Y Overlaps) */
+            /* Fixed: Asymmetric Spatial Positioning Coordinate Adjustments (Prevents Collisions) */
             
-            /* Master Anchor: 10 Lakh+ Plantations */
+            /* Master Top-Center Feature Anchor: 10 Lakh+ Plantations */
             .circle-plantations {
-                width: 145px !important;
-                height: 145px !important;
+                width: 140px !important;
+                height: 140px !important;
                 background: radial-gradient(circle at 35% 35%, #055252 0%, var(--primary-teal) 100%) !important;
                 border: 1px solid rgba(240, 224, 198, 0.35) !important;
                 top: 0px !important;
@@ -340,58 +340,58 @@
             }
 
             .circle-legacy {
-                width: 120px !important;
-                height: 120px !important;
-                top: 110px !important;
-                left: 10px !important;
+                width: 115px !important;
+                height: 115px !important;
+                top: 100px !important;
+                left: 5px !important;
                 z-index: 6;
             }
 
             .circle-acres {
-                width: 120px !important;
-                height: 120px !important;
-                top: 110px !important;
-                right: 10px !important;
+                width: 115px !important;
+                height: 115px !important;
+                top: 100px !important;
+                right: 5px !important;
                 z-index: 5;
             }
 
             .circle-projects {
-                width: 120px !important;
-                height: 120px !important;
-                top: 215px !important;
+                width: 115px !important;
+                height: 115px !important;
+                top: 195px !important;
                 left: 50% !important;
                 transform: translateX(-50%) !important;
                 z-index: 4;
             }
 
             .circle-customers {
-                width: 120px !important;
-                height: 120px !important;
-                top: 320px !important;
-                left: 10px !important;
+                width: 115px !important;
+                height: 115px !important;
+                top: 290px !important;
+                left: 5px !important;
                 z-index: 3;
             }
 
             .circle-cofarmers {
-                width: 120px !important;
-                height: 120px !important;
-                top: 320px !important;
-                right: 10px !important;
+                width: 115px !important;
+                height: 115px !important;
+                top: 290px !important;
+                right: 5px !important;
                 z-index: 2;
             }
 
             .circle-ventures {
-                width: 125px !important;
-                height: 125px !important;
-                top: 425px !important;
+                width: 120px !important;
+                height: 120px !important;
+                top: 385px !important;
                 left: 50% !important;
                 transform: translateX(-50%) !important;
                 z-index: 1;
             }
 
-            /* Typography Precision Adjustment Engine */
+            /* Fixed: Text Size Refinements to Prevent Hyphenation Cuts Cuts */
             .counter-circle h3 {
-                font-size: 1.25rem !important;
+                font-size: 1.2rem !important;
                 font-family: 'Playfair Display', serif !important;
                 color: var(--accent-gold) !important;
                 font-weight: 600 !important;
@@ -399,14 +399,14 @@
             }
 
             .circle-plantations h3 {
-                font-size: 1.5rem !important;
+                font-size: 1.45rem !important;
                 color: #FFFFFF !important;
             }
 
             .counter-circle p {
-                font-size: 0.58rem !important;
+                font-size: 0.55rem !important;
                 color: rgba(255, 255, 255, 0.7) !important;
-                letter-spacing: 1px !important;
+                letter-spacing: 0.8px !important;
                 text-transform: uppercase !important;
                 margin-top: 4px !important;
                 line-height: 1.2 !important;
@@ -415,7 +415,7 @@
             
             .circle-plantations p {
                 color: rgba(255, 255, 255, 0.85) !important;
-                font-size: 0.65rem !important;
+                font-size: 0.6rem !important;
             }
         }
 
