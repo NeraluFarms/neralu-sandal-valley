@@ -187,8 +187,8 @@
 
         .about-grid {
             display: grid !important;
-            grid-template-columns: 1.3fr 0.7fr !important;
-            gap: 80px !important;
+            grid-template-columns: 1.2fr 0.8fr !important;
+            gap: 60px !important;
             align-items: center !important;
             text-align: left !important;
             margin-top: 0 !important;
@@ -217,7 +217,7 @@
             display: flex !important;
             align-items: center !important;
             gap: 24px !important;
-            font-size: clamp(1.2rem, 2.2vw, 1.5rem) !important;
+            font-size: clamp(1.1rem, 2vw, 1.4rem) !important;
             line-height: 1.4 !important;
             font-weight: 500 !important;
             color: var(--white) !important;
@@ -225,7 +225,7 @@
 
         .about-list-item i {
             color: var(--accent-gold) !important;
-            font-size: clamp(1.5rem, 2.5vw, 1.9rem) !important;
+            font-size: clamp(1.3rem, 2.2vw, 1.7rem) !important;
             flex-shrink: 0 !important;
         }
 
@@ -719,64 +719,8 @@
             max-height: 300px;
         }
 
-        /* --- 10. Cinematic Master Footer --- */
-        footer {
-            background-color: var(--dark-charcoal);
-            color: var(--white);
-            padding: 80px 0 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr 1fr;
-            gap: 50px;
-        }
-
-        .footer-title {
-            color: var(--accent-gold);
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 50px auto 0;
-            padding-top: 25px;
-            border-top: 1px solid rgba(240, 224, 198, 0.1);
-            display: flex;
-            justify-content: space-between;
-            color: #888;
-            font-size: 0.85rem;
-        }
-
-        .footer-bottom a {
-            color: #888;
-            text-decoration: none;
-            margin-left: 15px;
-        }
-
         /* ========================================================
-           GLOBAL MOBILE RESPONSIVE LAYOUT MATRIX OVERHAUL
+           GLOBAL TABLET & MOBILE RESPONSIVE TUNING ENGINE
            ======================================================== */
         @media (max-width: 991px) {
             .about-grid {
@@ -828,7 +772,7 @@
 
         @media (max-width: 480px) {
 
-            /* Fix 1: Trust Strip Flexible Text Flow Alignment */
+            /* Fix 1: Trust Strip Text Auto-Wrap */
             .fluid-trust-strip {
                 font-size: 0.72rem !important;
                 line-height: 1.4 !important;
@@ -838,7 +782,7 @@
                 width: 100% !important;
             }
 
-            /* Fix 2: Pushes Floating Glass Navbar Safely Down */
+            /* Fix 2: Prevent Glass Navbar from Crashing the Banner */
             header {
                 position: absolute !important;
                 top: 85px !important;
@@ -846,7 +790,7 @@
                 width: 90% !important;
             }
 
-            /* Fix 3: Lead Form Layout Stretch Fix */
+            /* Fix 3: Form Element Spatial Stretch Engine */
             .responsive-lead-section {
                 padding: 80px 0 !important;
             }
@@ -878,15 +822,16 @@
                 display: block !important;
             }
 
-            /* Fix 4: Calibrated Mobile Metric Absolute Cluster Engine */
+            /* Fix 4: Flawless Geometric Mobile Micro-Cluster Matrix (Zero Collisions) */
             .about-section {
                 padding: 80px 0 !important;
             }
 
             .luxury-mobile-counters-wrap {
-                margin-top: 50px !important;
+                margin-top: 60px !important;
                 padding: 0 !important;
-                min-height: 640px !important;
+                min-height: 730px !important;
+                /* Expanded floor padding height track spacing alignment */
                 display: flex !important;
                 justify-content: center !important;
                 align-items: center !important;
@@ -898,7 +843,8 @@
                 display: block !important;
                 width: 100% !important;
                 max-width: 320px !important;
-                height: 580px !important;
+                /* Rigid boundary layout wall track */
+                height: 690px !important;
                 margin: 0 auto !important;
             }
 
@@ -919,7 +865,7 @@
                 box-sizing: border-box !important;
             }
 
-            /* Overlaps and positions fixed precisely for 480px width screens */
+            /* Perfectly calibrated spatial positions to completely eliminate overlap errors */
             .circle-plantations {
                 width: 145px !important;
                 height: 145px !important;
@@ -928,29 +874,29 @@
                 top: 0px !important;
                 left: 50% !important;
                 transform: translateX(-50%) !important;
-                z-index: 7 !important;
+                z-index: 10 !important;
             }
 
             .circle-legacy {
                 width: 125px !important;
                 height: 125px !important;
-                top: 115px !important;
-                left: 0px !important;
+                top: 125px !important;
+                left: -5px !important;
                 z-index: 6;
             }
 
             .circle-acres {
                 width: 125px !important;
                 height: 125px !important;
-                top: 115px !important;
-                right: 0px !important;
+                top: 125px !important;
+                right: -5px !important;
                 z-index: 5;
             }
 
             .circle-projects {
                 width: 125px !important;
                 height: 125px !important;
-                top: 225px !important;
+                top: 250px !important;
                 left: 50% !important;
                 transform: translateX(-50%) !important;
                 z-index: 4;
@@ -959,45 +905,45 @@
             .circle-customers {
                 width: 125px !important;
                 height: 125px !important;
-                top: 335px !important;
-                left: 0px !important;
+                top: 375px !important;
+                left: -5px !important;
                 z-index: 3;
             }
 
             .circle-cofarmers {
                 width: 125px !important;
                 height: 125px !important;
-                top: 335px !important;
-                right: 0px !important;
+                top: 375px !important;
+                right: -5px !important;
                 z-index: 2;
             }
 
             .circle-ventures {
                 width: 130px !important;
                 height: 130px !important;
-                top: 450px !important;
+                top: 500px !important;
                 left: 50% !important;
                 transform: translateX(-50%) !important;
                 z-index: 1;
             }
 
             .counter-circle h3 {
-                font-size: 1.25rem !important;
+                font-size: 1.2rem !important;
             }
 
             .circle-plantations h3 {
-                font-size: 1.5rem !important;
+                font-size: 1.45rem !important;
             }
 
             .counter-circle p {
-                font-size: 0.58rem !important;
+                font-size: 0.55rem !important;
                 letter-spacing: 0.5px !important;
                 margin-top: 4px !important;
                 line-height: 1.2 !important;
             }
 
             .circle-plantations p {
-                font-size: 0.65rem !important;
+                font-size: 0.6rem !important;
             }
 
             .advantage-grid {
@@ -1056,6 +1002,42 @@
         .close-menu:hover {
             color: var(--white);
         }
+
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .call-btn {
+            background-color: var(--primary-teal);
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+        }
     </style>
 </head>
 
@@ -1111,7 +1093,7 @@
                     <ul class="about-list">
                         <li class="about-list-item">
                             <i class="fa-solid fa-shield-halved"></i>
-                            <span><strong>Absolute Security:</strong> Clear marketable titles & full legal
+                            <span>export <strong>Absolute Security:</strong> Clear marketable titles & full legal
                                 validation.</span>
                         </li>
                         <li class="about-list-item">
