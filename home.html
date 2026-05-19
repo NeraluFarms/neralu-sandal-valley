@@ -214,12 +214,9 @@
         }
 
         /* ========================================================
-           LUXURY ASYMMETRIC TABLET & MOBILE STATS ENGINE
+           LUXURY TABLET & MOBILE RESPONSIVE ENGINE REFACTOR
            ======================================================== */
         @media (max-width: 991px) {
-            .about-section { 
-                padding: 100px 0 !important; 
-            }
             .about-grid { 
                 grid-template-columns: 1fr !important; 
                 gap: 60px !important; 
@@ -231,87 +228,90 @@
             .about-list-item { 
                 align-items: flex-start !important; 
             }
-            .about-counters-wrap {
-                min-height: auto !important;
-                margin-top: 20px !important;
-                padding: 0 !important;
+            .campaign-card-form { 
+                grid-template-columns: 1fr !important; /* Single column flow for forms */
+                gap: 15px !important; 
             }
-            /* Refined Table Layout: Grid Cluster */
-            .counter-circle-container {
-                position: relative !important;
-                width: 100% !important;
-                max-width: 650px !important;
-                height: auto !important;
-                display: grid !important;
-                grid-template-columns: repeat(3, 1fr) !important; /* Perfect 3-column balancing */
-                gap: 16px !important;
-                padding: 10px !important;
-                margin: 0 auto !important;
+            .full-width-row { 
+                grid-column: span 1 !important; 
             }
-            .counter-circle {
-                position: static !important; /* Safely strips absolute placement styles */
-                width: 100% !important;
-                height: auto !important;
-                aspect-ratio: 1 / 1 !important; /* Preserves organic round geometry shapes */
-                transform: none !important;
-                background: rgba(255, 255, 255, 0.03) !important;
-                border: 1px solid rgba(240, 224, 198, 0.12) !important;
-                border-radius: 50% !important;
-                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
-                padding: 15px !important;
+            .flyer-grid { 
+                grid-template-columns: 1fr !important; 
+                gap: 40px !important; 
             }
-            /* The Main Highlight Metric Spans Across Full Width */
-            .circle-plantations {
-                grid-column: span 3 !important;
-                aspect-ratio: unset !important;
-                height: 110px !important;
-                border-radius: 16px !important; /* Premium rounded dashboard geometry shape */
-                background: rgba(255, 255, 255, 0.05) !important;
-                border: 1px solid rgba(240, 224, 198, 0.25) !important;
-                margin-bottom: 10px !important;
-                order: -1 !important; /* Forces centerpiece to stack first on top */
+            .flyer-banner-frame { 
+                height: 450px !important; 
             }
-            .counter-circle h3 { 
-                font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important; 
+            .matrix-specs-list { 
+                grid-template-columns: 1fr !important; 
+                gap: 15px !important; 
             }
-            .circle-plantations h3 {
-                font-size: 2rem !important;
+            .advantage-grid { 
+                grid-template-columns: repeat(2, 1fr) !important; 
             }
-            .counter-circle p {
-                font-size: 0.65rem !important;
-                letter-spacing: 0.5px !important;
-                margin-top: 4px !important;
+            .footer-grid { 
+                grid-template-columns: 1fr !important; 
+                gap: 30px !important; 
             }
         }
 
-        /* ========================================================
-           LUXURY ASYMMETRIC MOBILE CIRCLE CLUSTER ENGINE
-           ======================================================== */
         @media (max-width: 480px) {
+            /* Trust Strip Fluid Text Wrapping */
+            .trust-strip {
+                font-size: 0.72rem !important;
+                line-height: 1.4 !important;
+                padding: 12px 15px !important;
+                letter-spacing: 1px !important;
+            }
+
+            /* Fixed Header Positioning Spacing */
+            header {
+                top: 85px !important; /* Pushes navbar cleanly below the wrapped text line */
+                padding: 10px 25px !important;
+            }
+
+            /* Lead Form Single Column Sizing Alignment */
+            .lead-section {
+                padding: 80px 0 !important;
+            }
+            .lead-section h2 {
+                font-size: 2.2rem !important;
+                margin-bottom: 30px !important;
+            }
+            .campaign-card-form {
+                max-width: 100% !important;
+                padding: 0 10px !important;
+            }
+            .form-bubble-group input, 
+            .form-bubble-group select {
+                padding: 15px 18px !important;
+                font-size: 0.95rem !important;
+                border-radius: 10px !important;
+            }
+
+            /* --- PRECISE MOBILE METRIC SPATIAL CLUSTER ENGINE --- */
+            .about-section {
+                padding: 100px 0 !important;
+            }
             .about-counters-wrap {
-                margin-top: 50px !important;
+                margin-top: 60px !important;
                 padding: 0 !important;
-                min-height: 560px !important; /* Forces vertical clear space for overlapping spheres */
+                min-height: 700px !important; /* Extended vertical floor to prevent overlaps */
                 display: flex !important;
                 justify-content: center !important;
                 align-items: center !important;
             }
-
-            /* Fixed: Restores organic boundary space parameters to avoid horizontal screen leaks */
             .counter-circle-container {
                 position: relative !important;
                 display: block !important;
                 width: 100% !important;
-                max-width: 320px !important; /* Fixed dimension limits to lock structural center alignment */
-                height: 520px !important;
+                max-width: 320px !important;
+                height: 660px !important; /* Calibrated canvas track */
                 margin: 0 auto !important;
-                gap: 0 !important;
             }
-
-            /* Fixed: Standardizes circles into clear organic shapes instead of flat ovals */
             .counter-circle {
-                position: absolute !important; /* Critical for multi-layered absolute depth stacking */
-                border-radius: 50% !important; /* Enforces a perfect sphere canvas layout */
+                position: absolute !important;
+                border-radius: 50% !important;
                 background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
                 backdrop-filter: blur(12px) !important;
                 -webkit-backdrop-filter: blur(12px) !important;
@@ -325,12 +325,10 @@
                 padding: 10px !important;
             }
 
-            /* Fixed: Asymmetric Spatial Positioning Coordinate Adjustments (Prevents Collisions) */
-            
-            /* Master Top-Center Feature Anchor: 10 Lakh+ Plantations */
+            /* Fixed Absolute Layout Coordinates (Zero Overlaps) */
             .circle-plantations {
-                width: 140px !important;
-                height: 140px !important;
+                width: 145px !important;
+                height: 145px !important;
                 background: radial-gradient(circle at 35% 35%, #055252 0%, var(--primary-teal) 100%) !important;
                 border: 1px solid rgba(240, 224, 198, 0.35) !important;
                 top: 0px !important;
@@ -338,84 +336,60 @@
                 transform: translateX(-50%) !important;
                 z-index: 7 !important;
             }
-
             .circle-legacy {
-                width: 115px !important;
-                height: 115px !important;
-                top: 100px !important;
-                left: 5px !important;
+                width: 125px !important;
+                height: 125px !important;
+                top: 115px !important; /* Calibrated to prevent crowding */
+                left: 0px !important;
                 z-index: 6;
             }
-
             .circle-acres {
-                width: 115px !important;
-                height: 115px !important;
-                top: 100px !important;
-                right: 5px !important;
+                width: 125px !important;
+                height: 125px !important;
+                top: 115px !important; /* Calibrated to prevent crowding */
+                right: 0px !important;
                 z-index: 5;
             }
-
             .circle-projects {
-                width: 115px !important;
-                height: 115px !important;
-                top: 195px !important;
+                width: 125px !important;
+                height: 125px !important;
+                top: 220px !important; /* Shifted low down away from top circles */
                 left: 50% !important;
                 transform: translateX(-50%) !important;
                 z-index: 4;
             }
-
             .circle-customers {
-                width: 115px !important;
-                height: 115px !important;
-                top: 290px !important;
-                left: 5px !important;
+                width: 125px !important;
+                height: 125px !important;
+                top: 330px !important; /* Shifted low down away from project row */
+                left: 0px !important;
                 z-index: 3;
             }
-
             .circle-cofarmers {
-                width: 115px !important;
-                height: 115px !important;
-                top: 290px !important;
-                right: 5px !important;
+                width: 125px !important;
+                height: 125px !important;
+                top: 330px !important; /* Shifted low down away from project row */
+                right: 0px !important;
                 z-index: 2;
             }
-
             .circle-ventures {
-                width: 120px !important;
-                height: 120px !important;
-                top: 385px !important;
+                width: 130px !important;
+                height: 130px !important;
+                top: 445px !important; /* Expanded floor clearance clearance */
                 left: 50% !important;
                 transform: translateX(-50%) !important;
                 z-index: 1;
             }
 
-            /* Fixed: Text Size Refinements to Prevent Hyphenation Cuts Cuts */
-            .counter-circle h3 {
-                font-size: 1.2rem !important;
-                font-family: 'Playfair Display', serif !important;
-                color: var(--accent-gold) !important;
-                font-weight: 600 !important;
-                line-height: 1.1 !important;
-            }
+            .counter-circle h3 { font-size: 1.25rem !important; }
+            .circle-plantations h3 { font-size: 1.5rem !important; }
+            .counter-circle p { font-size: 0.58rem !important; letter-spacing: 0.5px !important; margin-top: 4px !important; line-height: 1.2 !important; }
+            .circle-plantations p { font-size: 0.65rem !important; }
 
-            .circle-plantations h3 {
-                font-size: 1.45rem !important;
-                color: #FFFFFF !important;
-            }
-
-            .counter-circle p {
-                font-size: 0.55rem !important;
-                color: rgba(255, 255, 255, 0.7) !important;
-                letter-spacing: 0.8px !important;
-                text-transform: uppercase !important;
-                margin-top: 4px !important;
-                line-height: 1.2 !important;
-                padding: 0 4px !important;
-            }
-            
-            .circle-plantations p {
-                color: rgba(255, 255, 255, 0.85) !important;
-                font-size: 0.6rem !important;
+            /* Advantage Grid Breakdown Fallback */
+            .advantage-grid { 
+                grid-template-columns: 1fr !important; 
+                gap: 15px !important; 
             }
         }
 
@@ -636,7 +610,7 @@
 
     <!-- 2. Full-Bleed Cinema Hero -->
     <section class="campaign-hero">
-        <video class="hero-video-bg" autoplay muted loop playsinline>
+        <video class="hero-video-bg" autoplay muted loop playsinline webkit-playsinline aria-hidden="true">
             <source src="image/Sandal_Valley_Intro.mp4" type="video/mp4">
         </video>
         <div class="dark-vignette"></div>
