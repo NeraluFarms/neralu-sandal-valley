@@ -719,6 +719,62 @@
             max-height: 300px;
         }
 
+        /* --- 10. Cinematic Master Footer --- */
+        footer {
+            background-color: var(--dark-charcoal);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-title {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 50px auto 0;
+            padding-top: 25px;
+            border-top: 1px solid rgba(240, 224, 198, 0.1);
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom a {
+            color: #888;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
         /* ========================================================
            GLOBAL TABLET & MOBILE RESPONSIVE TUNING ENGINE
            ======================================================== */
@@ -830,7 +886,7 @@
             .luxury-mobile-counters-wrap {
                 margin-top: 60px !important;
                 padding: 0 !important;
-                min-height: 730px !important;
+                min-height: 780px !important;
                 /* Expanded floor padding height track spacing alignment */
                 display: flex !important;
                 justify-content: center !important;
@@ -844,11 +900,12 @@
                 width: 100% !important;
                 max-width: 320px !important;
                 /* Rigid boundary layout wall track */
-                height: 690px !important;
+                height: 740px !important;
                 margin: 0 auto !important;
             }
 
-            .counter-circle {
+            /* High-precision cascading selector paths to prevent cache styling injection */
+            .luxury-mobile-circle-container .counter-circle {
                 position: absolute !important;
                 border-radius: 50% !important;
                 background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
@@ -866,7 +923,7 @@
             }
 
             /* Perfectly calibrated spatial positions to completely eliminate overlap errors */
-            .circle-plantations {
+            .luxury-mobile-circle-container .circle-plantations {
                 width: 145px !important;
                 height: 145px !important;
                 background: radial-gradient(circle at 35% 35%, #055252 0%, var(--primary-teal) 100%) !important;
@@ -877,72 +934,72 @@
                 z-index: 10 !important;
             }
 
-            .circle-legacy {
+            .luxury-mobile-circle-container .circle-legacy {
                 width: 125px !important;
                 height: 125px !important;
-                top: 125px !important;
-                left: -5px !important;
-                z-index: 6;
+                top: 130px !important;
+                left: 0px !important;
+                z-index: 6 !important;
             }
 
-            .circle-acres {
+            .luxury-mobile-circle-container .circle-acres {
                 width: 125px !important;
                 height: 125px !important;
-                top: 125px !important;
-                right: -5px !important;
-                z-index: 5;
+                top: 130px !important;
+                right: 0px !important;
+                z-index: 5 !important;
             }
 
-            .circle-projects {
+            .luxury-mobile-circle-container .circle-projects {
                 width: 125px !important;
                 height: 125px !important;
-                top: 250px !important;
+                top: 265px !important;
                 left: 50% !important;
                 transform: translateX(-50%) !important;
-                z-index: 4;
+                z-index: 4 !important;
             }
 
-            .circle-customers {
+            .luxury-mobile-circle-container .circle-customers {
                 width: 125px !important;
                 height: 125px !important;
-                top: 375px !important;
-                left: -5px !important;
-                z-index: 3;
+                top: 400px !important;
+                left: 0px !important;
+                z-index: 3 !important;
             }
 
-            .circle-cofarmers {
+            .luxury-mobile-circle-container .circle-cofarmers {
                 width: 125px !important;
                 height: 125px !important;
-                top: 375px !important;
-                right: -5px !important;
-                z-index: 2;
+                top: 400px !important;
+                right: 0px !important;
+                z-index: 2 !important;
             }
 
-            .circle-ventures {
+            .luxury-mobile-circle-container .circle-ventures {
                 width: 130px !important;
                 height: 130px !important;
-                top: 500px !important;
+                top: 535px !important;
                 left: 50% !important;
                 transform: translateX(-50%) !important;
-                z-index: 1;
+                z-index: 1 !important;
             }
 
-            .counter-circle h3 {
+            .luxury-mobile-circle-container .counter-circle h3 {
                 font-size: 1.2rem !important;
             }
 
-            .circle-plantations h3 {
+            .luxury-mobile-circle-container .circle-plantations h3 {
                 font-size: 1.45rem !important;
             }
 
-            .counter-circle p {
+            .luxury-mobile-circle-container .counter-circle p {
                 font-size: 0.55rem !important;
                 letter-spacing: 0.5px !important;
                 margin-top: 4px !important;
                 line-height: 1.2 !important;
             }
 
-            .circle-plantations p {
+            .luxury-mobile-circle-container .circle-plantations p {
                 font-size: 0.6rem !important;
             }
 
@@ -950,93 +1007,6 @@
                 grid-template-columns: 1fr !important;
                 gap: 15px !important;
             }
-        }
-
-        /* --- Additional Mobile Overlay Menu & Utility CSS --- */
-        .menu-overlay {
-            position: fixed;
-            inset: 0;
-            background-color: var(--dark-charcoal);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .close-menu {
-            position: absolute;
-            top: 40px;
-            right: 5%;
-            font-size: 2.5rem;
-            color: var(--accent-gold);
-            cursor: pointer;
-        }
-
-        .menu-links {
-            list-style: none;
-            text-align: center;
-        }
-
-        .menu-links li {
-            margin: 25px 0;
-        }
-
-        .menu-links a {
-            color: var(--accent-gold);
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .menu-links a:hover,
-        .close-menu:hover {
-            color: var(--white);
-        }
-
-        .floating-buttons {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 1000;
-        }
-
-        .float-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 28px;
-            color: white;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
-
-        .float-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .call-btn {
-            background-color: var(--primary-teal);
-        }
-
-        .whatsapp-btn {
-            background-color: #25D366;
         }
     </style>
 </head>
