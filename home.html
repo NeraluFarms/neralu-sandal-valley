@@ -114,6 +114,69 @@
             background-color: var(--white) !important;
         }
 
+        /* --- Overlay Navigation Menu --- */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(3, 62, 62, 0.98);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+            cursor: pointer;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .close-menu:hover {
+            color: var(--white);
+            transform: rotate(90deg);
+        }
+
+        .menu-links {
+            list-style: none;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .menu-links li a {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .menu-links li a:hover {
+            color: var(--accent-gold);
+            transform: scale(1.05);
+        }
+
         /* --- 2. Full-Bleed Cinema Hero --- */
         .campaign-hero {
             position: relative;
@@ -776,8 +839,8 @@
         }
 
         /* ========================================================
-           GLOBAL TABLET & MOBILE RESPONSIVE TUNING ENGINE
-           ======================================================== */
+            GLOBAL TABLET & MOBILE RESPONSIVE TUNING ENGINE
+            ======================================================== */
         @media (max-width: 991px) {
             .about-grid {
                 grid-template-columns: 1fr !important;
@@ -878,16 +941,15 @@
                 display: block !important;
             }
 
-            /* Fix 4: Flawless Geometric Mobile Micro-Cluster Matrix (Zero Collisions) */
+            /* Fix 4: Flawless Geometric Mobile Grid Engine (Zero Overlaps or Collisions) */
             .about-section {
                 padding: 80px 0 !important;
             }
 
             .luxury-mobile-counters-wrap {
-                margin-top: 60px !important;
+                margin-top: 40px !important;
                 padding: 0 !important;
-                min-height: 780px !important;
-                /* Expanded floor padding height track spacing alignment */
+                min-height: auto !important;
                 display: flex !important;
                 justify-content: center !important;
                 align-items: center !important;
@@ -895,112 +957,94 @@
             }
 
             .luxury-mobile-circle-container {
-                position: relative !important;
-                display: block !important;
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px 16px !important;
                 width: 100% !important;
-                max-width: 320px !important;
-                /* Rigid boundary layout wall track */
-                height: 740px !important;
+                max-width: 340px !important;
+                height: auto !important;
                 margin: 0 auto !important;
+                position: relative !important;
             }
 
-            /* High-precision cascading selector paths to prevent cache styling injection */
+            /* Resetting desktop absolute traits with structured responsive parameters */
             .luxury-mobile-circle-container .counter-circle {
-                position: absolute !important;
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                transform: none !important;
                 border-radius: 50% !important;
                 background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
                 backdrop-filter: blur(12px) !important;
                 -webkit-backdrop-filter: blur(12px) !important;
                 border: 1px solid rgba(240, 224, 198, 0.15) !important;
-                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25) !important;
                 display: flex !important;
                 flex-direction: column !important;
                 justify-content: center !important;
                 align-items: center !important;
                 text-align: center !important;
-                padding: 10px !important;
-                box-sizing: border-box !important;
-            }
-
-            /* Perfectly calibrated spatial positions to completely eliminate overlap errors */
-            .luxury-mobile-circle-container .circle-plantations {
                 width: 145px !important;
                 height: 145px !important;
+                padding: 12px !important;
+                box-sizing: border-box !important;
+                margin: 0 auto !important;
+            }
+
+            /* Emulating the premium 1-2-1-2-1 layout structure safely */
+            .luxury-mobile-circle-container .circle-plantations {
+                grid-column: span 2 !important;
+                width: 165px !important;
+                height: 165px !important;
                 background: radial-gradient(circle at 35% 35%, #055252 0%, var(--primary-teal) 100%) !important;
                 border: 1px solid rgba(240, 224, 198, 0.35) !important;
-                top: 0px !important;
-                left: 50% !important;
-                transform: translateX(-50%) !important;
-                z-index: 10 !important;
             }
 
             .luxury-mobile-circle-container .circle-legacy {
-                width: 125px !important;
-                height: 125px !important;
-                top: 130px !important;
-                left: 0px !important;
-                z-index: 6 !important;
+                grid-column: span 1 !important;
             }
 
             .luxury-mobile-circle-container .circle-acres {
-                width: 125px !important;
-                height: 125px !important;
-                top: 130px !important;
-                right: 0px !important;
-                z-index: 5 !important;
+                grid-column: span 1 !important;
             }
 
             .luxury-mobile-circle-container .circle-projects {
-                width: 125px !important;
-                height: 125px !important;
-                top: 265px !important;
-                left: 50% !important;
-                transform: translateX(-50%) !important;
-                z-index: 4 !important;
+                grid-column: span 2 !important;
             }
 
             .luxury-mobile-circle-container .circle-customers {
-                width: 125px !important;
-                height: 125px !important;
-                top: 400px !important;
-                left: 0px !important;
-                z-index: 3 !important;
+                grid-column: span 1 !important;
             }
 
             .luxury-mobile-circle-container .circle-cofarmers {
-                width: 125px !important;
-                height: 125px !important;
-                top: 400px !important;
-                right: 0px !important;
-                z-index: 2 !important;
+                grid-column: span 1 !important;
             }
 
             .luxury-mobile-circle-container .circle-ventures {
-                width: 130px !important;
-                height: 130px !important;
-                top: 535px !important;
-                left: 50% !important;
-                transform: translateX(-50%) !important;
-                z-index: 1 !important;
+                grid-column: span 2 !important;
             }
 
+            /* Responsive typography tweaks inside micro-circles */
             .luxury-mobile-circle-container .counter-circle h3 {
-                font-size: 1.2rem !important;
+                font-size: 1.3rem !important;
+                margin-bottom: 2px !important;
             }
 
             .luxury-mobile-circle-container .circle-plantations h3 {
-                font-size: 1.45rem !important;
+                font-size: 1.6rem !important;
             }
 
             .luxury-mobile-circle-container .counter-circle p {
-                font-size: 0.55rem !important;
+                font-size: 0.65rem !important;
                 letter-spacing: 0.5px !important;
-                margin-top: 4px !important;
                 line-height: 1.2 !important;
+                margin-top: 2px !important;
             }
 
             .luxury-mobile-circle-container .circle-plantations p {
-                font-size: 0.6rem !important;
+                font-size: 0.7rem !important;
             }
 
             .advantage-grid {
@@ -1063,7 +1107,7 @@
                     <ul class="about-list">
                         <li class="about-list-item">
                             <i class="fa-solid fa-shield-halved"></i>
-                            <span>export <strong>Absolute Security:</strong> Clear marketable titles & full legal
+                            <span><strong>Absolute Security:</strong> Clear marketable titles & full legal
                                 validation.</span>
                         </li>
                         <li class="about-list-item">
