@@ -229,7 +229,7 @@
                 align-items: flex-start !important; 
             }
             .campaign-card-form { 
-                grid-template-columns: 1fr !important; /* Single column flow for forms */
+                grid-template-columns: 1fr !important; /* Single column fallback for compressed inputs */
                 gap: 15px !important; 
             }
             .full-width-row { 
@@ -256,62 +256,76 @@
         }
 
         @media (max-width: 480px) {
-            /* Trust Strip Fluid Text Wrapping */
-            .trust-strip {
+            /* Fix 1: Trust Strip Flexible Text Flow Alignment */
+            .fluid-trust-strip {
                 font-size: 0.72rem !important;
                 line-height: 1.4 !important;
                 padding: 12px 15px !important;
                 letter-spacing: 1px !important;
+                display: block !important;
+                width: 100% !important;
             }
 
-            /* Fixed Header Positioning Spacing */
+            /* Fix 2: Pushes Floating Glass Navbar Safely Down */
             header {
-                top: 85px !important; /* Pushes navbar cleanly below the wrapped text line */
+                position: absolute !important;
+                top: 85px !important; 
                 padding: 10px 25px !important;
+                width: 90% !important;
             }
 
-            /* Lead Form Single Column Sizing Alignment */
-            .lead-section {
+            /* Fix 3: Lead Form Layout Stretch Fix */
+            .responsive-lead-section {
                 padding: 80px 0 !important;
             }
-            .lead-section h2 {
+            .responsive-lead-section h2 {
                 font-size: 2.2rem !important;
                 margin-bottom: 30px !important;
             }
-            .campaign-card-form {
+            .premium-mobile-form {
+                display: flex !important;
+                flex-direction: column !important; /* Enforces strict vertical block flow */
+                gap: 16px !important;
                 max-width: 100% !important;
                 padding: 0 10px !important;
             }
+            .form-bubble-group {
+                width: 100% !important;
+                grid-column: span 1 !important;
+            }
             .form-bubble-group input, 
             .form-bubble-group select {
-                padding: 15px 18px !important;
-                font-size: 0.95rem !important;
-                border-radius: 10px !important;
+                padding: 16px 18px !important;
+                font-size: 1rem !important;
+                border-radius: 12px !important;
+                width: 100% !important;
+                display: block !important;
             }
 
-            /* --- PRECISE MOBILE METRIC SPATIAL CLUSTER ENGINE --- */
+            /* Fix 4: Calibrated Mobile Metric Absolute Cluster Engine */
             .about-section {
-                padding: 100px 0 !important;
+                padding: 80px 0 !important;
             }
-            .about-counters-wrap {
-                margin-top: 60px !important;
+            .luxury-mobile-counters-wrap {
+                margin-top: 50px !important;
                 padding: 0 !important;
-                min-height: 700px !important; /* Extended vertical floor to prevent overlaps */
+                min-height: 640px !important; /* Locks clear height block tracking layout space */
                 display: flex !important;
                 justify-content: center !important;
                 align-items: center !important;
+                width: 100% !important;
             }
-            .counter-circle-container {
+            .luxury-mobile-circle-container {
                 position: relative !important;
                 display: block !important;
                 width: 100% !important;
-                max-width: 320px !important;
-                height: 660px !important; /* Calibrated canvas track */
+                max-width: 320px !important; /* Rigid boundary layout wall track */
+                height: 580px !important;
                 margin: 0 auto !important;
             }
             .counter-circle {
                 position: absolute !important;
-                border-radius: 50% !important;
+                border-radius: 50% !important; /* Guarantees flawless spherical symmetry circles */
                 background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
                 backdrop-filter: blur(12px) !important;
                 -webkit-backdrop-filter: blur(12px) !important;
@@ -323,9 +337,10 @@
                 align-items: center !important;
                 text-align: center !important;
                 padding: 10px !important;
+                box-sizing: border-box !important;
             }
 
-            /* Fixed Absolute Layout Coordinates (Zero Overlaps) */
+            /* Calibrated Spatial Positioning Matrix Blueprint Coordinate Loops */
             .circle-plantations {
                 width: 145px !important;
                 height: 145px !important;
@@ -339,21 +354,21 @@
             .circle-legacy {
                 width: 125px !important;
                 height: 125px !important;
-                top: 115px !important; /* Calibrated to prevent crowding */
+                top: 115px !important; /* Offset margin separation */
                 left: 0px !important;
                 z-index: 6;
             }
             .circle-acres {
                 width: 125px !important;
                 height: 125px !important;
-                top: 115px !important; /* Calibrated to prevent crowding */
+                top: 115px !important; /* Offset margin separation */
                 right: 0px !important;
                 z-index: 5;
             }
             .circle-projects {
                 width: 125px !important;
                 height: 125px !important;
-                top: 220px !important; /* Shifted low down away from top circles */
+                top: 225px !important; /* Shifted low down clear of the legacy/acres tier row */
                 left: 50% !important;
                 transform: translateX(-50%) !important;
                 z-index: 4;
@@ -361,21 +376,21 @@
             .circle-customers {
                 width: 125px !important;
                 height: 125px !important;
-                top: 330px !important; /* Shifted low down away from project row */
+                top: 335px !important; /* Shifted low down clear of the projects tier row */
                 left: 0px !important;
                 z-index: 3;
             }
             .circle-cofarmers {
                 width: 125px !important;
                 height: 125px !important;
-                top: 330px !important; /* Shifted low down away from project row */
+                top: 335px !important; /* Shifted low down clear of the projects tier row */
                 right: 0px !important;
                 z-index: 2;
             }
             .circle-ventures {
                 width: 130px !important;
                 height: 130px !important;
-                top: 445px !important; /* Expanded floor clearance clearance */
+                top: 450px !important; /* Final space footprint line clearance spacing */
                 left: 50% !important;
                 transform: translateX(-50%) !important;
                 z-index: 1;
@@ -576,7 +591,7 @@
 <body>
 
     <!-- 1. Trust Bar & Floating Header -->
-    <div class="trust-strip">
+    <div class="trust-strip fluid-trust-strip">
         ✦ BIAAPA / BMRDA APPROVED ✦ HIGH-YIELD LAND Retainers ✦ CLEAR MARKETABLE TITLES
     </div>
 
@@ -641,8 +656,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="about-counters-wrap">
-                    <div class="counter-circle-container">
+                <div class="about-counters-wrap luxury-mobile-counters-wrap">
+                    <div class="counter-circle-container luxury-mobile-circle-container">
                         <div class="counter-circle circle-plantations">
                             <h3>10 Lakh+</h3>
                             <p>Plantations<br>Managed</p>
@@ -678,10 +693,10 @@
     </section>
 
     <!-- 4. High-Contrast Lead Form -->
-    <section class="lead-section" id="lead-section">
+    <section class="lead-section responsive-lead-section" id="lead-section">
         <div class="container">
             <h2 class="serif">Request Pricing & Info</h2>
-            <form id="campaign-form" class="campaign-card-form" action="../submit-form.php" method="POST">
+            <form id="campaign-form" class="campaign-card-form premium-mobile-form" action="../submit-form.php" method="POST">
                 <div class="form-bubble-group">
                     <input type="text" name="name" placeholder="Full Name" required>
                 </div>
