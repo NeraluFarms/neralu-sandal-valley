@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neralu Farms | Premium Managed Farmlands & Investments</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ========================================================
+           NERALU FARMS MASTER CORPORATE CAMPAIGN CSS ENGINE
+           ======================================================== */
+        :root {
+            --primary-teal: #033E3E;
+            --accent-gold: #F0E0C6;
+            --bg-cream: #FFF9E9;
+            --bg-almond: #F4E6D2;
+            --dark-charcoal: #0a1a16;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-cream); color: var(--primary-teal); overflow-x: hidden; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+
+        /* --- 1. Trust Bar & Floating Header --- */
+        .trust-strip { background-color: var(--dark-charcoal); color: var(--bg-cream); padding: 10px 20px; text-align: center; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; z-index: 1005; position: relative; }
+        header { position: absolute; top: 65px; left: 50%; transform: translateX(-50%); width: 90%; background: rgba(3, 62, 62, 0.9) !important; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(240, 224, 198, 0.2); border-radius: 50px; padding: 14px 40px; z-index: 1000; box-shadow: 0 15px 35px rgba(3, 62, 62, 0.15); }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { max-height: 40px; filter: brightness(0) invert(1); }
+        /* ========================================================
+           FIX: NAVBAR HAMBURGER ICON STRUCTURAL VISIBILITY
+           ======================================================== */
+        .hamburger { 
+            cursor: pointer; 
+            display: flex !important; 
+            flex-direction: column !important; 
+            justify-content: center !important; 
+            align-items: center !important; 
+            gap: 5px !important; 
+            width: 42px !important; /* Establishes physical touch layout width */
+            height: 42px !important; /* Establishes physical touch layout height */
+            padding: 0 !important; 
+            position: relative; 
+            z-index: 1010; 
+        }
+
+        .hamburger span { 
+            display: block !important; 
+            background-color: var(--accent-gold) !important; /* High-contrast sandstone gold gold lines */
+            width: 26px !important; 
+            height: 3px !important; 
+            border-radius: 4px !important; 
+            transition: all 0.3s ease !important; 
+        }
+
+        .hamburger:hover span {
+            background-color: var(--white) !important; /* Light accent on mouse hover tracking */
+        }
+
+        /* --- 2. Full-Bleed Cinema Hero --- */
+        .campaign-hero { position: relative; width: 100%; height: 95vh; min-height: 650px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .hero-video-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+        .dark-vignette { position: absolute; inset: 0; background: radial-gradient(circle, rgba(10,26,22,0.3) 0%, rgba(10,26,22,0.85) 100%); z-index: 2; }
+        .hero-headline-wrap { position: relative; z-index: 3; text-align: center; color: var(--white); padding: 0 20px; margin-top: 80px; }
+        .hero-headline-wrap h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; text-shadow: 0 4px 15px rgba(0,0,0,0.6); }
+        .btn-hero-scroll { display: inline-block; background-color: var(--accent-gold); color: var(--primary-teal); padding: 16px 36px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; border-radius: 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: all 0.3s ease; }
+        .btn-hero-scroll:hover { background-color: var(--white); transform: translateY(-2px); }
+
+        /* --- 3. About Section --- */
+        /* --- Luxury Editorial About Section --- */
+        .about-section { 
+            padding: 140px 0 !important; 
+            background-color: var(--primary-teal) !important; 
+            color: var(--white) !important;
+            position: relative;
+        }
+
+        .about-grid { 
+            display: grid !important; 
+            grid-template-columns: 1.3fr 0.7fr !important; /* Asymmetric split layout layout */
+            gap: 80px !important; 
+            align-items: center !important; 
+            text-align: left !important; 
+            margin-top: 0 !important; 
+        }
+
+        .about-section h2.serif {
+            font-family: 'Playfair Display', serif !important;
+            color: var(--accent-gold) !important;
+            font-size: clamp(2.8rem, 5vw, 4.2rem) !important; /* Bold, clear headline scale */
+            font-weight: 500 !important;
+            letter-spacing: -0.5px !important;
+            margin-bottom: 45px !important;
+            text-align: left !important;
+        }
+
+        .about-list {
+            list-style: none !important;
+            padding: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 35px !important; /* Generous spacing for a premium feel */
+            width: 100% !important;
+        }
+
+        .about-list-item {
+            display: flex !important;
+            align-items: center !important;
+            gap: 24px !important;
+            font-size: clamp(1.2rem, 2.2vw, 1.5rem) !important; /* Clean, bold font scaling sizing */
+            line-height: 1.4 !important;
+            font-weight: 500 !important;
+            color: var(--white) !important;
+        }
+
+        .about-list-item i {
+            color: var(--accent-gold) !important; 
+            font-size: clamp(1.5rem, 2.5vw, 1.9rem) !important; /* Sharp, high-contrast crisp icons */
+            flex-shrink: 0 !important;
+        }
+
+        .about-list-item strong {
+            color: var(--accent-gold) !important;
+            font-weight: 600 !important;
+        }
+
+        /* --- PREMIUM 7-POINT MULTI-CIRCLE GRID MATRIX ENGINE --- */
+        .about-counters-wrap {
+            position: relative;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 520px; /* Enhanced vertical floor space for the 7-circle cluster */
+            margin-top: 0 !important;
+        }
+
+        .counter-circle-container {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            height: 480px;
+        }
+
+        .counter-circle {
+            position: absolute;
+            border-radius: 50% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            text-align: center !important;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(240, 224, 198, 0.12) !important;
+            box-shadow: 0 15px 35px rgba(10, 26, 22, 0.25) !important;
+        }
+
+        .counter-circle:hover {
+            transform: scale(1.08);
+            border-color: var(--accent-gold) !important;
+            z-index: 20 !important;
+        }
+
+        /* Core Centerpiece Ring: 10 Lakh+ Plantations */
+        .circle-plantations {
+            width: 160px !important;
+            height: 160px !important;
+            background: radial-gradient(circle at 35% 35%, #055252 0%, var(--primary-teal) 100%) !important;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            border: 1px solid rgba(240, 224, 198, 0.3) !important;
+        }
+        .circle-plantations h3 { font-size: 1.8rem !important; color: #FFFFFF !important; }
+
+        /* Outer Orbiting Rings: Glassmorphic Variants */
+        .circle-orbit {
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            width: 120px !important;
+            height: 120px !important;
+        }
+
+        .circle-legacy { top: 15px; left: 50%; transform: translateX(-50%); z-index: 5; }
+        .circle-acres  { top: 90px; right: 15px; z-index: 4; }
+        .circle-projects { bottom: 90px; right: 15px; z-index: 3; }
+        .circle-customers { bottom: 15px; left: 50%; transform: translateX(-50%); z-index: 6; }
+        .circle-cofarmers { bottom: 90px; left: 15px; z-index: 5; }
+        .circle-ventures { top: 90px; left: 15px; z-index: 2; }
+
+        /* Typography Scaling Inside Matrix Rings */
+        .counter-circle h3 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important;
+            color: var(--accent-gold) !important;
+            font-weight: 600 !important;
+            line-height: 1 !important;
+        }
+        .counter-circle p {
+            font-size: 0.65rem !important;
+            text-transform: uppercase !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+            font-weight: 600 !important;
+            letter-spacing: 1px !important;
+            margin-top: 4px !important;
+            line-height: 1.2 !important;
+            padding: 0 4px;
+        }
+
+        /* ========================================================
+           LUXURY ASYMMETRIC TABLET & MOBILE STATS ENGINE
+           ======================================================== */
+        @media (max-width: 991px) {
+            .about-section { 
+                padding: 100px 0 !important; 
+            }
+            .about-grid { 
+                grid-template-columns: 1fr !important; 
+                gap: 60px !important; 
+            }
+            .about-section h2.serif { 
+                text-align: center !important; 
+                margin-bottom: 35px !important; 
+            }
+            .about-list-item { 
+                align-items: flex-start !important; 
+            }
+            .about-counters-wrap {
+                min-height: auto !important;
+                margin-top: 20px !important;
+                padding: 0 !important;
+            }
+            /* Refined Table Layout: Grid Cluster */
+            .counter-circle-container {
+                position: relative !important;
+                width: 100% !important;
+                max-width: 650px !important;
+                height: auto !important;
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important; /* Perfect 3-column balancing */
+                gap: 16px !important;
+                padding: 10px !important;
+                margin: 0 auto !important;
+            }
+            .counter-circle {
+                position: static !important; /* Safely strips absolute placement styles */
+                width: 100% !important;
+                height: auto !important;
+                aspect-ratio: 1 / 1 !important; /* Preserves organic round geometry shapes */
+                transform: none !important;
+                background: rgba(255, 255, 255, 0.03) !important;
+                border: 1px solid rgba(240, 224, 198, 0.12) !important;
+                border-radius: 50% !important;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+                padding: 15px !important;
+            }
+            /* The Main Highlight Metric Spans Across Full Width */
+            .circle-plantations {
+                grid-column: span 3 !important;
+                aspect-ratio: unset !important;
+                height: 110px !important;
+                border-radius: 16px !important; /* Premium rounded dashboard geometry shape */
+                background: rgba(255, 255, 255, 0.05) !important;
+                border: 1px solid rgba(240, 224, 198, 0.25) !important;
+                margin-bottom: 10px !important;
+                order: -1 !important; /* Forces centerpiece to stack first on top */
+            }
+            .counter-circle h3 { 
+                font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important; 
+            }
+            .circle-plantations h3 {
+                font-size: 2rem !important;
+            }
+            .counter-circle p {
+                font-size: 0.65rem !important;
+                letter-spacing: 0.5px !important;
+                margin-top: 4px !important;
+            }
+        }
+
+        /* ========================================================
+           LUXURY ASYMMETRIC MOBILE CIRCLE CLUSTER ENGINE
+           ======================================================== */
+        @media (max-width: 480px) {
+            .about-counters-wrap {
+                margin-top: 60px !important;
+                padding: 0 !important;
+                min-height: 620px !important; /* Creates vertical space for the circular overlap cluster */
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+            }
+
+            /* Custom organic container blueprint */
+            .counter-circle-container {
+                position: relative !important;
+                display: block !important;
+                width: 100% !important;
+                max-width: 340px !important; /* Prevents overflow while keeping circles large */
+                height: 580px !important;
+                margin: 0 auto !important;
+                gap: 0 !important;
+            }
+
+            /* Resets the boxes into perfect luxury glass spheres */
+            .counter-circle {
+                position: absolute !important; /* Essential for premium layout overlapping styling */
+                border-radius: 50% !important; /* Forces absolute circular geometry layout */
+                background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+                backdrop-filter: blur(12px) !important;
+                -webkit-backdrop-filter: blur(12px) !important;
+                border: 1px solid rgba(240, 224, 198, 0.15) !important;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                text-align: center !important;
+                padding: 10px !important;
+            }
+
+            /* Premium Asymmetric Positioning Strategy (X, Y Overlaps) */
+            
+            /* Master Anchor: 10 Lakh+ Plantations */
+            .circle-plantations {
+                width: 145px !important;
+                height: 145px !important;
+                background: radial-gradient(circle at 35% 35%, #055252 0%, var(--primary-teal) 100%) !important;
+                border: 1px solid rgba(240, 224, 198, 0.35) !important;
+                top: 0px !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                z-index: 7 !important;
+            }
+
+            .circle-legacy {
+                width: 120px !important;
+                height: 120px !important;
+                top: 110px !important;
+                left: 10px !important;
+                z-index: 6;
+            }
+
+            .circle-acres {
+                width: 120px !important;
+                height: 120px !important;
+                top: 110px !important;
+                right: 10px !important;
+                z-index: 5;
+            }
+
+            .circle-projects {
+                width: 120px !important;
+                height: 120px !important;
+                top: 215px !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                z-index: 4;
+            }
+
+            .circle-customers {
+                width: 120px !important;
+                height: 120px !important;
+                top: 320px !important;
+                left: 10px !important;
+                z-index: 3;
+            }
+
+            .circle-cofarmers {
+                width: 120px !important;
+                height: 120px !important;
+                top: 320px !important;
+                right: 10px !important;
+                z-index: 2;
+            }
+
+            .circle-ventures {
+                width: 125px !important;
+                height: 125px !important;
+                top: 425px !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                z-index: 1;
+            }
+
+            /* Typography Precision Adjustment Engine */
+            .counter-circle h3 {
+                font-size: 1.25rem !important;
+                font-family: 'Playfair Display', serif !important;
+                color: var(--accent-gold) !important;
+                font-weight: 600 !important;
+                line-height: 1.1 !important;
+            }
+
+            .circle-plantations h3 {
+                font-size: 1.5rem !important;
+                color: #FFFFFF !important;
+            }
+
+            .counter-circle p {
+                font-size: 0.58rem !important;
+                color: rgba(255, 255, 255, 0.7) !important;
+                letter-spacing: 1px !important;
+                text-transform: uppercase !important;
+                margin-top: 4px !important;
+                line-height: 1.2 !important;
+                padding: 0 4px !important;
+            }
+            
+            .circle-plantations p {
+                color: rgba(255, 255, 255, 0.85) !important;
+                font-size: 0.65rem !important;
+            }
+        }
+
+        /* --- 4. High-Contrast Lead Form --- */
+        .lead-section { 
+            padding: 100px 0; 
+            background-color: var(--bg-almond) !important; 
+            color: var(--primary-teal) !important; 
+            text-align: center; 
+        }
+        .lead-section h2 { 
+            color: var(--primary-teal) !important; 
+            font-size: 2.8rem; 
+            margin-bottom: 40px; 
+        }
+        .campaign-card-form { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px; 
+        }
+        .form-bubble-group { position: relative; }
+        .form-bubble-group input, 
+        .form-bubble-group select { 
+            width: 100%; 
+            padding: 16px 20px; 
+            border: 1px solid rgba(3, 62, 62, 0.15) !important; 
+            background-color: var(--white) !important; /* Crisp white inputs for readability */
+            border-radius: 12px; 
+            color: var(--primary-teal) !important; 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 1rem; 
+            outline: none; 
+        }
+        .form-bubble-group input::placeholder { 
+            color: rgba(3, 62, 62, 0.6) !important; 
+        }
+        .form-bubble-group select option { 
+            background: var(--white); 
+            color: var(--primary-teal); 
+        }
+        .full-width-row { grid-column: span 2; }
+        .btn-campaign-submit { 
+            width: 100%; 
+            background-color: var(--primary-teal) !important; 
+            color: var(--bg-cream) !important; 
+            padding: 18px; 
+            border: none; 
+            border-radius: 12px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            box-shadow: 0 8px 25px rgba(3, 62, 62, 0.15) !important; 
+        }
+        .btn-campaign-submit:hover { 
+            background-color: var(--dark-charcoal) !important; 
+            color: var(--white) !important; 
+            transform: translateY(-2px); 
+        }
+
+        /* --- 5. Asymmetric Principles Flyer Section --- */
+        .flyer-section {
+            padding: 120px 0;
+            background-color: var(--bg-cream) !important; /* Keeps the light contrast contrast frame */
+        }
+        .flyer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .principles-stack { display: flex; flex-direction: column; gap: 40px; }
+        .principle-row { display: flex; align-items: center; gap: 30px; }
+        .principle-row:nth-child(even) { flex-direction: row-reverse; text-align: right; }
+        .principle-circle { width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 4px solid var(--accent-gold); flex-shrink: 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .principle-circle img { width: 100%; height: 100%; object-fit: cover; }
+        .flyer-banner-frame { position: relative; border-radius: 30px; overflow: hidden; height: 650px; box-shadow: 0 25px 55px rgba(3,62,62,0.15); }
+        .flyer-banner-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .flyer-banner-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(3,62,62,0.9) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 50px; color: var(--white); }
+        .flyer-banner-overlay h3 { font-size: 2.5rem; margin-bottom: 15px; color: var(--accent-gold); }
+
+        /* --- 6. Live Project Matrix Slider --- */
+        .matrix-section { 
+            padding: 120px 0; 
+            background-color: var(--dark-charcoal) !important; /* Extra deep corporate depth */
+            text-align: center; 
+        }
+        .matrix-section h2.serif {
+            color: var(--white) !important;
+        }
+        .matrix-slider-container { 
+            max-width: 950px; 
+            margin: 50px auto 0; 
+            position: relative; 
+            background: var(--bg-cream) !important; /* Crisp interior card frame contrast */
+            padding: 50px; 
+            border-radius: 24px; 
+            box-shadow: 0 25px 55px rgba(0,0,0,0.3); 
+            border-left: 6px solid var(--accent-gold) !important; /* High contrast gold bar edge */
+            text-align: left; 
+        }
+        .matrix-card h4 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary-teal); margin-bottom: 20px; }
+        .matrix-specs-list { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 35px; border-top: 1px solid rgba(3,62,62,0.1); padding-top: 20px; }
+        .matrix-specs-list li { font-size: 1rem; display: flex; flex-direction: column; gap: 4px; }
+        .matrix-specs-list li span { font-size: 0.75rem; text-transform: uppercase; color: #888; letter-spacing: 1px; }
+        .matrix-specs-list li strong { color: var(--primary-teal); font-size: 1.2rem; }
+        .slider-controls { display: flex; justify-content: flex-end; gap: 15px; margin-top: 20px; }
+        .control-btn { width: 45px; height: 45px; border-radius: 50%; background: var(--primary-teal); color: var(--white); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; }
+        .control-btn:hover { background: var(--dark-charcoal); transform: scale(1.05); }
+
+        /* --- 7. Core Advantage Block --- */
+        .advantage-section { padding: 100px 0; background-color: var(--bg-cream); text-align: center; }
+        .advantage-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-top: 50px; }
+        .advantage-card { background: var(--white); padding: 40px 20px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid rgba(3,62,62,0.05); transition: all 0.3s; }
+        .advantage-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
+        .advantage-card img { height: 65px; width: auto; margin-bottom: 20px; }
+        .advantage-card h4 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-teal); }
+
+        /* --- 8. Video Showcase --- */
+        .video-section { padding: 100px 0; background-color: var(--bg-almond); text-align: center; }
+        .video-frame-wrap { max-width: 1000px; margin: 40px auto 0; padding-top: 56.25%; position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
+        .video-frame-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; background:#000; }
+
+        /* --- 9. Luxury FAQ Accordion --- */
+        .faq-section { 
+            padding: 100px 0; 
+            background-color: var(--primary-teal) !important; /* Changed to corporate teal */
+        }
+        .faq-section .faq-title {
+            color: var(--accent-gold) !important; /* Sharp gold gold head line header */
+            text-align: center;
+        }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { 
+            background: rgba(255, 255, 255, 0.05) !important; /* Glassmorphic rows */
+            border-radius: 12px; 
+            margin-bottom: 15px; 
+            border: 1px solid rgba(240, 224, 198, 0.15) !important; 
+            overflow: hidden; 
+        }
+        .faq-question { width: 100%; text-align: left; padding: 22px 30px; background: transparent; border: none; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 600; color: var(--white) !important; cursor: pointer; }
+        .faq-question i { color: var(--accent-gold) !important; transition: transform 0.3s; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: rgba(10, 26, 22, 0.5) !important; /* Deep panel interior background */ }
+        .faq-answer p { padding: 25px 30px; color: rgba(255, 255, 255, 0.85) !important; font-size: 0.95rem; line-height: 1.6; }
+        .faq-item.active .faq-question i { transform: rotate(45deg); }
+        .faq-item.active .faq-answer { max-height: 300px; }
+
+        /* --- 10. Cinematic Master Footer --- */
+        footer { background-color: var(--dark-charcoal); color: var(--white); padding: 80px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 1.2fr 0.8fr 1fr; gap: 50px; }
+        .footer-title { color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #aaa; text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-bottom { max-width: 1200px; margin: 50px auto 0; padding-top: 25px; border-top: 1px solid rgba(240, 224, 198, 0.1); display: flex; justify-content: space-between; color: #888; font-size: 0.85rem; }
+        .footer-bottom a { color: #888; text-decoration: none; margin-left: 15px; }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 991px) {
+            .about-grid, .flyer-grid, .campaign-card-form { grid-template-columns: 1fr; }
+            .about-counters { flex-direction: column; gap: 20px; }
+            .flyer-banner-frame { height: 400px; }
+            .principle-row, .principle-row:nth-child(even) { flex-direction: column; text-align: center; }
+            .matrix-specs-list { grid-template-columns: 1fr; gap: 15px; }
+            .advantage-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+        @media (max-width: 600px) { .advantage-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; gap: 10px; } }
+
+        /* --- Additional Mobile Overlay Menu & Utility CSS --- */
+        .menu-overlay { position: fixed; inset: 0; background-color: var(--dark-charcoal); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.4s ease; }
+        .menu-overlay.active { opacity: 1; visibility: visible; }
+        .close-menu { position: absolute; top: 40px; right: 5%; font-size: 2.5rem; color: var(--accent-gold); cursor: pointer; }
+        .menu-links { list-style: none; text-align: center; }
+        .menu-links li { margin: 25px 0; }
+        .menu-links a { color: var(--accent-gold); font-family: 'Playfair Display', serif; font-size: 2.5rem; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+        .menu-links a:hover, .close-menu:hover { color: var(--white); }
+
+        .floating-buttons { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
+        .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 28px; color: white; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 0.3s; }
+        .float-btn:hover { transform: scale(1.1); }
+        .call-btn { background-color: var(--primary-teal); }
+        .whatsapp-btn { background-color: #25D366; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Trust Bar & Floating Header -->
+    <div class="trust-strip">
+        ✦ BIAAPA / BMRDA APPROVED ✦ HIGH-YIELD LAND Retainers ✦ CLEAR MARKETABLE TITLES
+    </div>
+
+    <header>
+        <div class="nav-inner">
+            <div class="logo">
+                <a href="home.html">
+                    <img src="image/NERALU-LOGO.png" alt="Neralu Farms">
+                </a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="close-menu" onclick="toggleMenu()">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <ul class="menu-links">
+            <li><a href="neralu-river-stone.html" onclick="toggleMenu()">Neralu River Stone</a></li>
+            <li><a href="neralu-sandal-valley.html" onclick="toggleMenu()">Neralu Sandal Valley</a></li>
+            <li><a href="neralu-korlaparthi.html" onclick="toggleMenu()">Neralu Korlaparthi</a></li>
+            <li><a href="neralu-brahmasamudra.html" onclick="toggleMenu()">Neralu Brahmasamudra</a></li>
+        </ul>
+    </div>
+
+    <!-- 2. Full-Bleed Cinema Hero -->
+    <section class="campaign-hero">
+        <video class="hero-video-bg" autoplay muted loop playsinline>
+            <source src="image/Sandal_Valley_Intro.mp4" type="video/mp4">
+        </video>
+        <div class="dark-vignette"></div>
+        <div class="hero-headline-wrap">
+            <h1 class="serif">Your Next Big Life Upgrade is a Managed Farmland</h1>
+            <a href="#lead-section" class="btn-hero-scroll">Explore Opportunities</a>
+        </div>
+    </section>
+
+    <!-- 3. About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content-left">
+                    <h2 class="serif">About Neralu</h2>
+                    <ul class="about-list">
+                        <li class="about-list-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span><strong>Absolute Security:</strong> Clear marketable titles & full legal validation.</span>
+                        </li>
+                        <li class="about-list-item">
+                            <i class="fa-solid fa-leaf"></i>
+                            <span><strong>Premium Assets:</strong> High-yield timber plantations & organic orchards.</span>
+                        </li>
+                        <li class="about-list-item">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                            <span><strong>Zero Management:</strong> 100% hands-free farming handled by experts.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-counters-wrap">
+                    <div class="counter-circle-container">
+                        <div class="counter-circle circle-plantations">
+                            <h3>10 Lakh+</h3>
+                            <p>Plantations<br>Managed</p>
+                        </div>
+                        <div class="counter-circle circle-orbit circle-legacy">
+                            <h3>4+</h3>
+                            <p>Generations<br>Agri Legacy</p>
+                        </div>
+                        <div class="counter-circle circle-orbit circle-acres">
+                            <h3>200+</h3>
+                            <p>Acres of<br>Farmland</p>
+                        </div>
+                        <div class="counter-circle circle-orbit circle-projects">
+                            <h3>3+</h3>
+                            <p>Projects<br>Delivered</p>
+                        </div>
+                        <div class="counter-circle circle-orbit circle-customers">
+                            <h3>5500+</h3>
+                            <p>Happy<br>Customers</p>
+                        </div>
+                        <div class="counter-circle circle-orbit circle-cofarmers">
+                            <h3>300+</h3>
+                            <p>Happy<br>Co-Farmers</p>
+                        </div>
+                        <div class="counter-circle circle-orbit circle-ventures">
+                            <h3>40+</h3>
+                            <p>Active<br>Ventures</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. High-Contrast Lead Form -->
+    <section class="lead-section" id="lead-section">
+        <div class="container">
+            <h2 class="serif">Request Pricing & Info</h2>
+            <form id="campaign-form" class="campaign-card-form" action="../submit-form.php" method="POST">
+                <div class="form-bubble-group">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="form-bubble-group">
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-bubble-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-bubble-group">
+                    <select name="project_destination" required>
+                        <option value="" disabled selected>Select Project Interest</option>
+                        <option value="Neralu River Stone">Neralu River Stone (Villa Plots)</option>
+                        <option value="Neralu Sandal Valley">Neralu Sandal Valley (Managed Farmland)</option>
+                        <option value="Neralu Korlaparthi">Neralu Korlaparthi (Eco-Luxury Farmland)</option>
+                        <option value="Neralu Brahmasamudra">Neralu Brahmasamudra (Premium Returns)</option>
+                    </select>
+                </div>
+                <div class="form-bubble-group full-width-row">
+                    <button type="submit" class="btn-campaign-submit">Get Instant Access</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- 5. Asymmetric Principles Flyer Section -->
+    <section class="flyer-section">
+        <div class="container">
+            <div class="flyer-grid">
+                <!-- Left Stack -->
+                <div class="principles-stack">
+                    <h2 class="serif" style="font-size: 2.8rem; margin-bottom: 20px;">Our Principles</h2>
+                    
+                    <div class="principle-row">
+                       <div class="principle-circle">
+                           <img src="image/sandal1.webp" alt="Agroforestry">
+                       </div>
+                       <div class="principle-info">
+                           <h4 class="serif" style="font-size: 1.5rem; margin-bottom: 10px;">Agroforestry</h4>
+                           <p style="color: #666; font-size: 0.95rem;">Mix of fruit trees and timber plantation for optimal ecology and high returns.</p>
+                       </div>
+                    </div>
+
+                    <div class="principle-row">
+                       <div class="principle-circle">
+                           <img src="image/sandal2.webp" alt="Sustainability">
+                       </div>
+                       <div class="principle-info">
+                           <h4 class="serif" style="font-size: 1.5rem; margin-bottom: 10px;">Sustainability</h4>
+                           <p style="color: #666; font-size: 0.95rem;">Mimic natural processes to enrich soil organic matter and preserve local biodiversity.</p>
+                       </div>
+                    </div>
+
+                    <div class="principle-row">
+                       <div class="principle-circle">
+                           <img src="image/sandal3.webp" alt="Permaculture">
+                       </div>
+                       <div class="principle-info">
+                           <h4 class="serif" style="font-size: 1.5rem; margin-bottom: 10px;">Permaculture</h4>
+                           <p style="color: #666; font-size: 0.95rem;">Self-sustaining agricultural ecosystems designed for long-term health and efficiency.</p>
+                       </div>
+                    </div>
+                </div>
+
+                <!-- Right Stack -->
+                <div class="flyer-banner-frame">
+                    <img src="image/sandal4.webp" alt="Become a Co-Farmer">
+                    <div class="flyer-banner-overlay">
+                        <h3 class="serif">Become a Co-Farmer Today</h3>
+                        <a href="tel:+917975937887" class="btn-hero-scroll" style="align-self: flex-start; margin-top: 15px;">CALL US</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Live Project Matrix Slider -->
+    <section class="matrix-section">
+        <div class="container">
+            <h2 class="serif" style="font-size: 2.8rem;">Live Project Matrix</h2>
+            <div class="matrix-slider-container">
+                <!-- Card 1: Neralu River-Stone -->
+                <div class="matrix-card" id="slide-0">
+                    <span class="matrix-tag" style="display: inline-block; font-size: 0.8rem; color: var(--accent-gold); background: var(--primary-teal); padding: 5px 15px; border-radius: 20px; margin-bottom: 15px; font-weight: 700; text-transform: uppercase;">Villa Plots</span>
+                    <h4 class="serif">Neralu River-Stone</h4>
+                    <ul class="matrix-specs-list">
+                        <li>
+                            <span>Budget</span>
+                            <strong>₹8,000 Per Sq. Ft.</strong>
+                        </li>
+                        <li>
+                            <span>Farm Plot Size</span>
+                            <strong>1,200 Sq. Ft. Onwards</strong>
+                        </li>
+                        <li>
+                            <span>Location</span>
+                            <strong>Marasandra, Bangalore</strong>
+                        </li>
+                    </ul>
+                    <a href="neralu-river-stone.html" class="btn-hero-scroll" style="font-size: 0.9rem; padding: 12px 28px;">Explore Details</a>
+                </div>
+                
+                <!-- Card 2: Neralu Sandal Valley -->
+                <div class="matrix-card" id="slide-1" style="display: none;">
+                    <span class="matrix-tag" style="display: inline-block; font-size: 0.8rem; color: var(--accent-gold); background: var(--primary-teal); padding: 5px 15px; border-radius: 20px; margin-bottom: 15px; font-weight: 700; text-transform: uppercase;">Managed Farmland</span>
+                    <h4 class="serif">Neralu Sandal Valley</h4>
+                    <ul class="matrix-specs-list">
+                        <li>
+                            <span>Budget</span>
+                            <strong>Starting from ₹40 Lakhs*</strong>
+                        </li>
+                        <li>
+                            <span>Farm Plot Size</span>
+                            <strong>6,000 & 10,000 Sq. Ft.</strong>
+                        </li>
+                        <li>
+                            <span>Location</span>
+                            <strong>Gudibanda, Chikkaballapura</strong>
+                        </li>
+                    </ul>
+                    <a href="neralu-sandal-valley.html" class="btn-hero-scroll" style="font-size: 0.9rem; padding: 12px 28px;">Explore Details</a>
+                </div>
+
+                <!-- Card 3: Neralu Korlaparthi -->
+                <div class="matrix-card" id="slide-2" style="display: none;">
+                    <span class="matrix-tag" style="display: inline-block; font-size: 0.8rem; color: var(--accent-gold); background: var(--primary-teal); padding: 5px 15px; border-radius: 20px; margin-bottom: 15px; font-weight: 700; text-transform: uppercase;">Eco-Luxury Farmland</span>
+                    <h4 class="serif">Neralu Korlaparthi</h4>
+                    <ul class="matrix-specs-list">
+                        <li>
+                            <span>Budget</span>
+                            <strong>Starting from ₹28 Lakhs*</strong>
+                        </li>
+                        <li>
+                            <span>Farm Plot Size</span>
+                            <strong>31-Acre Mango Orchard Private Compound</strong>
+                        </li>
+                        <li>
+                            <span>Location</span>
+                            <strong>Sidlaghatta, Chikkaballapur</strong>
+                        </li>
+                    </ul>
+                    <a href="neralu-korlaparthi.html" class="btn-hero-scroll" style="font-size: 0.9rem; padding: 12px 28px;">Explore Details</a>
+                </div>
+
+                <!-- Card 4: Neralu Brahmasamudram -->
+                <div class="matrix-card" id="slide-3" style="display: none;">
+                    <span class="matrix-tag" style="display: inline-block; font-size: 0.8rem; color: var(--accent-gold); background: var(--primary-teal); padding: 5px 15px; border-radius: 20px; margin-bottom: 15px; font-weight: 700; text-transform: uppercase;">Premium Plotted Farmland</span>
+                    <h4 class="serif">Neralu Brahmasamudram</h4>
+                    <ul class="matrix-specs-list">
+                        <li>
+                            <span>Budget</span>
+                            <strong>Starting from ₹18 Lakhs*</strong>
+                        </li>
+                        <li>
+                            <span>Farm Plot Size</span>
+                            <strong>100 Acres Plotted Area Hub</strong>
+                        </li>
+                        <li>
+                            <span>Location</span>
+                            <strong>Brahmasamudram, Andhra Pradesh</strong>
+                        </li>
+                    </ul>
+                    <a href="neralu-brahmasamudra.html" class="btn-hero-scroll" style="font-size: 0.9rem; padding: 12px 28px;">Explore Details</a>
+                </div>
+
+                <!-- Slider Controls -->
+                <div class="slider-controls">
+                    <button class="control-btn" onclick="prevSlide()"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="control-btn" onclick="nextSlide()"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Core Advantage Block -->
+    <section class="advantage-section">
+        <div class="container">
+            <h2 class="serif" style="font-size: 2.8rem;">The Neralu Advantage</h2>
+            <div class="advantage-grid">
+                <!-- Card 1: Secure -->
+                <div class="advantage-card">
+                    <div style="height: 65px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#033E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h4>Secure</h4>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px; line-height: 1.5;">Clear marketable titles, legal validation, and 24/7 security surveillance.</p>
+                </div>
+                
+                <!-- Card 2: Sustainable -->
+                <div class="advantage-card">
+                    <div style="height: 65px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#033E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 22s8-4 8-10V2C6 2 2 6 2 12z"></path>
+                            <path d="M22 22s-8-4-8-10V2c4 0 8 4 8 10z"></path>
+                            <path d="M12 2v20"></path>
+                        </svg>
+                    </div>
+                    <h4>Sustainable</h4>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px; line-height: 1.5;">Agroforestry, permaculture design guidelines, and organic natural farming system principles.</p>
+                </div>
+                
+                <!-- Card 3: Tech Enabled -->
+                <div class="advantage-card">
+                    <div style="height: 65px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#033E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                            <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                            <line x1="12" y1="20" x2="12.01" y2="20" stroke-width="3"></line>
+                        </svg>
+                    </div>
+                    <h4>Tech Enabled</h4>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px; line-height: 1.5;">IoT-based automated drip irrigation, soil health sensors, and remote farm dashboard monitoring.</p>
+                </div>
+                
+                <!-- Card 4: Rewarding -->
+                <div class="advantage-card">
+                    <div style="height: 65px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#033E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2c1.38 0 2.5 1.1 2.5 2.5v1.57c2.47.66 4.3 2.76 4.47 5.37.1 1.4-.23 2.87-.97 4.14-1.2 2.06-3.4 3.42-6 3.42s-4.8-1.36-6-3.42c-.74-1.27-1.07-2.74-.97-4.14.17-2.6 2-4.7 4.47-5.37V4.5C9.5 3.1 10.62 2 12 2z"></path>
+                            <path d="M14.5 4.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v.5"></path>
+                        </svg>
+                    </div>
+                    <h4>Rewarding</h4>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px; line-height: 1.5;">High-yielding timber crops, sandalwood yields, and fruit harvest profit sharing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Video Showcase -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="serif" style="font-size: 2.8rem;">Life at Neralu Farms</h2>
+            <div class="video-frame-wrap">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Life at Neralu Farms" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Luxury FAQ Accordion -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="faq-container">
+                <h2 class="serif faq-title" style="text-align: center; font-size: 2.8rem; margin-bottom: 50px;">Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <!-- Item 1 -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What is Managed Farmland?</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Managed Farmland is an investment model where you buy and own agricultural land, but the development, plantation management, irrigation, security, and maintenance are handled by a professional agricultural team. You get to enjoy the benefits of farmland ownership without the day-to-day hassles.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Who manages the farmland?</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Neralu Farms has a dedicated team of expert agronomists, horticulturists, and farm maintenance professionals who employ modern farming methods, IoT sensors, and permaculture design systems to manage the land and ensure healthy tree growth.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What are your core principles?</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our farming system revolves around three core pillars: Agroforestry (combining high-yield timber with fruit orchards), Sustainability (mimicking nature to restore soil organic health), and Permaculture (building self-reliant, zero-waste ecological loops).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Cinematic Master Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Corporate Office</h3>
+                    <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                        No 302, Manpho Greens Layout,<br>
+                        Bagaluru, Bengaluru,<br>
+                        Karnataka 562149
+                    </p>
+                    <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 10px;">
+                        <i class="fa-solid fa-phone" style="margin-right: 8px; color: var(--accent-gold);"></i> 
+                        <a href="tel:+917975937887" style="color: #aaa; text-decoration: none;">+91 7975937887</a>
+                    </p>
+                    <p style="color: #aaa; font-size: 0.95rem;">
+                        <i class="fa-solid fa-envelope" style="margin-right: 8px; color: var(--accent-gold);"></i> 
+                        <a href="mailto:info@neralufarms.com" style="color: #aaa; text-decoration: none;">info@neralufarms.com</a>
+                    </p>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Explore Projects</h3>
+                    <ul class="footer-links">
+                        <li><a href="neralu-river-stone.html">Neralu River Stone</a></li>
+                        <li><a href="neralu-sandal-valley.html">Neralu Sandal Valley</a></li>
+                        <li><a href="neralu-korlaparthi.html">Neralu Korlaparthi</a></li>
+                        <li><a href="neralu-brahmasamudra.html">Neralu Brahmasamudra</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Connect With Us</h3>
+                    <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                        Join our growing community of co-farmers and keep up to date with the latest developments.
+                    </p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="https://www.youtube.com/@neralufarms" target="_blank" style="color: var(--accent-gold); font-size: 1.5rem; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='none'"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/company/neralu-farms" target="_blank" style="color: var(--accent-gold); font-size: 1.5rem; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='none'"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/neralu_farms" target="_blank" style="color: var(--accent-gold); font-size: 1.5rem; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='none'"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/neralu.managed.farms" target="_blank" style="color: var(--accent-gold); font-size: 1.5rem; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='none'"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Neralu Farms. All Rights Reserved.</p>
+                <div>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/917975937887" class="float-btn whatsapp-btn" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:+917975937887" class="float-btn call-btn">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Toggle Overlay Menu
+        function toggleMenu() {
+            const overlay = document.getElementById('menuOverlay');
+            overlay.classList.toggle('active');
+            if (overlay.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Live Project Matrix Slider Logic
+        let currentSlide = 0;
+        const slides = [
+            document.getElementById('slide-0'), 
+            document.getElementById('slide-1'),
+            document.getElementById('slide-2'),
+            document.getElementById('slide-3')
+        ];
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.style.display = 'block';
+                } else {
+                    slide.style.display = 'none';
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // FAQ Accordion Logic
+        document.addEventListener("DOMContentLoaded", function () {
+            const faqItems = document.querySelectorAll(".faq-item");
+            faqItems.forEach(item => {
+                const question = item.querySelector(".faq-question");
+                question.addEventListener("click", () => {
+                    const activeItem = document.querySelector(".faq-item.active");
+                    if (activeItem && activeItem !== item) {
+                        activeItem.classList.remove("active");
+                    }
+                    item.classList.toggle("active");
+                });
+            });
+
+            // Form Submit and Validation
+            const campaignForm = document.getElementById('campaign-form');
+            if (campaignForm) {
+                campaignForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const phoneInput = campaignForm.querySelector('input[name="phone"]');
+                    const phoneValue = phoneInput.value.trim();
+                    const phoneRegex = /^[0-9]{10}$/;
+
+                    if (!phoneRegex.test(phoneValue)) {
+                        alert('Please enter a valid 10-digit phone number.');
+                        phoneInput.focus();
+                        return;
+                    }
+
+                    const submitBtn = campaignForm.querySelector('button[type="submit"]');
+                    const originalBtnText = submitBtn.innerHTML;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = 'Processing...';
+
+                    const formData = new FormData(this);
+
+                    fetch('../submit-form.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        if (data.trim() === 'success') {
+                            window.location.href = '../thank-you.html';
+                        } else {
+                            alert('There was a slight issue. Please try again or call us directly.');
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnText;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Connection error. Please check your internet and try again.');
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
