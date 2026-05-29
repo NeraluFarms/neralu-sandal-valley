@@ -114,108 +114,44 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background-color: var(--dark-green, var(--text-dark)); /* Adapts to page theme */
+            background-color: var(--dark-green);
             z-index: 2000;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             opacity: 0;
             visibility: hidden;
             transition: all 0.4s ease;
         }
 
         .menu-overlay.active {
-            opacity: 1 !important;
-            visibility: visible !important;
+            opacity: 1;
+            visibility: visible;
         }
 
         .close-menu {
             position: absolute;
-            top: 40px;
+            top: 30px;
             right: 5%;
             font-size: 2.5rem;
-            color: var(--gold, var(--amber-sunset)); /* Adapts to page theme */
+            color: var(--gold);
             cursor: pointer;
-            transition: transform 0.3s ease, color 0.3s ease;
+            transition: transform 0.3s ease;
             line-height: 1;
-            z-index: 2100;
         }
 
         .close-menu:hover {
             transform: scale(1.1);
-            color: var(--white) !important;
-        }
-
-        /* Dual Column Layout Engine - Widened to prevent text wrap */
-        .menu-container {
-            display: flex;
-            align-items: stretch;
-            justify-content: center;
-            gap: 50px;
-            width: 100%;
-            max-width: 1300px; /* Increased max-width */
-            padding: 0 5%;
-        }
-
-        .menu-column {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center-align the content block */
-            justify-content: center;
-        }
-
-        /* Adjust alignment for a balanced look */
-        .menu-column:first-child {
-            align-items: flex-end; /* Align right side of left column to divider */
-            padding-right: 20px;
-        }
-
-        .menu-column:last-child {
-            align-items: flex-start; /* Align left side of right column to divider */
-            padding-left: 20px;
-        }
-
-        .menu-divider {
-            width: 1px;
-            background-color: rgba(255, 255, 255, 0.15);
-            margin: 20px 0;
-        }
-
-        .menu-subtitle {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 35px;
-            display: block;
-            text-align: center;
-            font-weight: 600;
-            width: 100%; /* Ensure subtitles span the column width */
-        }
-        
-        .menu-column:first-child .menu-subtitle {
-            text-align: right;
-        }
-        .menu-column:last-child .menu-subtitle {
-             text-align: left;
+            color: var(--white);
         }
 
         .menu-links {
             list-style: none;
-            padding: 0;
-            width: 100%;
-        }
-        
-        .menu-column:first-child .menu-links {
-             text-align: right;
-        }
-        .menu-column:last-child .menu-links {
-             text-align: left;
+            text-align: center;
         }
 
         .menu-links li {
-            margin: 15px 0 !important;
+            margin: 20px 0;
             transform: translateY(20px);
             opacity: 0;
             transition: all 0.4s ease;
@@ -226,27 +162,26 @@
             opacity: 1;
         }
 
-        /* Staggered animation for links */
-        .menu-column:nth-child(1) .menu-links li:nth-child(1) { transition-delay: 0.1s; }
-        .menu-column:nth-child(1) .menu-links li:nth-child(2) { transition-delay: 0.15s; }
-        .menu-column:nth-child(1) .menu-links li:nth-child(3) { transition-delay: 0.2s; }
-        .menu-column:nth-child(1) .menu-links li:nth-child(4) { transition-delay: 0.25s; }
-        .menu-column:nth-child(3) .menu-links li:nth-child(1) { transition-delay: 0.2s; }
-
         .menu-links a {
-            color: var(--gold, var(--amber-sunset)) !important;
+            color: var(--gold);
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem !important; /* Slightly reduced to prevent wrap */
+            font-size: 3rem;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease, transform 0.3s ease;
-            display: inline-block;
-            white-space: nowrap; /* Force text to stay on one line */
+            transition: color 0.3s;
         }
 
         .menu-links a:hover {
-            color: var(--white) !important;
-            transform: scale(1.05);
+            color: var(--white);
+        }
+
+        .menu-subtitle {
+            color: var(--white);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            display: block;
+            text-align: center;
         }
 
         /* --- IMMERSIVE SPLIT HERO --- */
@@ -1926,62 +1861,35 @@
             }
 
             /* Menu Fixes */
-            /* Mobile Menu Stack Fixes */
-        .menu-container {
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-            justify-content: flex-start; /* Start from top to allow scrolling if needed */
-            height: 100vh; /* Fill entire viewport */
-            overflow-y: auto;
-            padding-top: 80px; /* Space for close button */
-            padding-bottom: 40px;
-        }
-        
-        .menu-column {
-            flex: none;
-            width: 100%;
-            align-items: center !important; /* Center everything on mobile */
-            padding: 0 !important;
-        }
+            .menu-links a {
+                font-size: 2rem !important;
+                /* Reduced from 3rem+ to fit screen width */
+                margin: 15px 0 !important;
+                letter-spacing: 1px !important;
+            }
 
-        .menu-column:first-child .menu-subtitle,
-        .menu-column:last-child .menu-subtitle {
-             text-align: center; /* Center subtitles on mobile */
-        }
-        
-        .menu-column:first-child .menu-links,
-        .menu-column:last-child .menu-links {
-             text-align: center; /* Center links on mobile */
-        }
+            .menu-overlay {
+                padding: 20px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
 
-        .menu-divider {
-            width: 80px; /* Horizontal divider on mobile */
-            height: 1px;
-            margin: 20px 0;
-            background-color: rgba(255, 255, 255, 0.2);
-        }
+            .menu-subtitle {
+                font-size: 0.9rem !important;
+                letter-spacing: 3px !important;
+                margin-bottom: 30px !important;
+                opacity: 0.7;
+            }
 
-        .menu-subtitle {
-            margin-bottom: 20px;
-            font-size: 0.8rem !important;
-            letter-spacing: 3px !important;
+            .close-menu {
+                top: 30px !important;
+                right: 30px !important;
+                font-size: 2rem !important;
+            }
         }
-
-        .menu-links li {
-            margin: 15px 0 !important; /* Adjust spacing between links */
-        }
-
-        .menu-links a {
-            font-size: 1.8rem !important; /* Size suitable for mobile */
-            white-space: normal; /* Allow wrapping on very small screens if necessary, though 1.8rem usually fits */
-        }
-        
-        .close-menu {
-             top: 20px !important;
-             right: 20px !important;
-        }
-    }
     </style>
 </head>
 
@@ -2006,25 +1914,14 @@
     <div class="menu-overlay" id="menuOverlay">
         <div class="close-menu" onclick="toggleMenu()">✕</div>
 
-        <div class="menu-container">
-            <div class="menu-column">
-                <span class="menu-subtitle">Managed Farmland</span>
-                <ul class="menu-links">
-                    <li><a href="neralu-korlaparthi.html">Neralu Korlaparthi</a></li>
-                    <li><a href="neralu-sandal-valley.html">Neralu Sandal Valley</a></li>
-                    <li><a href="neralu-brahmasamudra.html">Neralu Brahmasamudra</a></li>
-                    <li><a href="neralu-kadiri.html">Neralu Kadiri</a></li>
-                </ul>
-            </div>
-
-            <div class="menu-divider"></div>
-
-            <div class="menu-column">
-                <span class="menu-subtitle">Residential Plots</span>
-                <ul class="menu-links">
-                    <li><a href="neralu-river-stone.html">Neralu River Stone</a></li>
-                </ul>
-            </div>
+        <div class="menu-inner">
+            <span class="menu-subtitle">Explore Our Portfolio</span>
+            <ul class="menu-links">
+                <li><a href="neralu-korlaparthi.html">Neralu Korlaparthi</a></li>
+                <li><a href="neralu-sandal-valley.html">Neralu Sandal Valley</a></li>
+                <li><a href="neralu-brahmasamudra.html">Neralu Brahmasamudra</a></li>
+                <li><a href="neralu-river-stone.html">Neralu River Stone</a></li>
+            </ul>
         </div>
     </div>
 
